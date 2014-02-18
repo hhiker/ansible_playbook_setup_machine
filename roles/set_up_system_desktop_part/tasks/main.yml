@@ -1,0 +1,56 @@
+---
+# Uninstall unnecessary desktop softwares.
+- name: "Uninstall ibus"
+  apt: pkg=ibus state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk3 state=absent
+
+- name: "Uninstall firefox"
+  apt: pkg=firefox state=absent
+
+# Install necessary desktop softwares.
+- name: "Install fcitx"
+  apt: pkg=fcitx state=present
+
+- name: "Install terminator"
+  apt: pkg=terminator state=present
+
+- name: "Install guake"
+  apt: pkg=guake state=present
+
+- name: "Install stardict"
+  apt: pkg=guake state=present
+
+- name: "Install vlc"
+  apt: pkg=vlc state=present
+
+- name: "Install wallch"
+  apt: pkg=wallch state=present
+
+- name: "Install pandoc"
+  apt: pkg=pandoc state=present
+
+- name: "Install okular"
+  apt: pkg=okular state=present
+
+- name: "Install gnome-shell"
+  apt: pkg=gnome-shell state=present
+
+- name: "Install gnome-tweak-tool"
+  apt: pkg=gnome-tweak-tool state=present
+
+- name: "Install google-chrome-stable"
+  apt: pkg=google-chrome-stable state=present
+
+- name: "Install chmsee"
+  apt: pkg=chmsee state=present
+
+- name: "Install tree"
+  apt: pkg=tree state=present
+
+- name: "Install p7zip-full"
+  apt: pkg=p7zip-full state=present

@@ -1,0 +1,30 @@
+---
+- name: "Install .bashrc"
+  copy: src=".bashrc" dest="~/.bashrc"
+
+- name: "Install .tmux.conf"
+  copy: src=".tmux.conf" dest="~/.tmux.conf"
+
+- name: "Git clone vim config tarball"
+  git: repo=https://github.com/hhiker/.vim dest=~/.vim
+
+- name: "Install vimrc"
+  copy: src=".vimrc" dest="~/"
+
+- name: "Install gitconfig"
+  copy: src="gitconfig" dest="~/.gitconfig"
+
+- name: "Install gitignore"
+  copy: src="gitignore" dest="~/.gitignore"
+
+- name: "Install fcitx config tarball"
+  copy: src="fcitx.tar.gz" dest="~/.config/"
+
+- name: "Remove fcitx config already exists"
+  file: path="~/.config/fcitx/" state="absent"
+
+- name: "Decompress fcitx config tarball"
+  command: tar -xf /home/shawn/.config/fcitx.tar.gz -C /home/shawn/.config/
+
+- name: "Remove fcitx tarball"
+  file: path="/home/shawn/fcitx.tar.gz" state="absent"

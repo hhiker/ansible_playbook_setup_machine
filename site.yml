@@ -1,0 +1,6 @@
+---
+# file: site.yml
+
+- include: set_up_system_server_part.yml
+- include: shawn_init.yml
+- include: set_up_system_desktop_part.yml
