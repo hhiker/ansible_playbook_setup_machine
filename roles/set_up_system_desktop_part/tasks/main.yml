@@ -54,3 +54,6 @@
 
 - name: "Install p7zip-full"
   apt: pkg=p7zip-full state=present
+
+- name: "Install shutter"
+  apt: pkg=shutter state=present
