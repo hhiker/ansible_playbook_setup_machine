@@ -109,6 +109,10 @@ fi
 # Here begins customized configurations.
 ## begin alias ==============================================================
 alias v="vim"
+alias du="du -h"
+alias ll="ls -lha"
+alias n="nautilus ."
+alias py="python"
 ## end alias ================================================================
 
 ## begin env setting ========================================================
