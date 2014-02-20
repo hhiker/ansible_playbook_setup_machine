@@ -1,4 +1,4 @@
----
+# ---
 - name: "Install .bashrc"
   copy: src=".bashrc" dest="~/.bashrc"
 
@@ -28,3 +28,9 @@
 
 - name: "Remove fcitx tarball"
   file: path="/home/shawn/fcitx.tar.gz" state="absent"
+
+- name: "Install useful scripts"
+  copy: src="bin" dest="~/mine/"
+
+- name: "Make scripts executable"
+  shell: chmod 744 ~/mine/bin/*
