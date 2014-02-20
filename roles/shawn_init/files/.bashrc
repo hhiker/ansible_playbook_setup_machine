@@ -115,6 +115,10 @@ alias n="nautilus ."
 alias py="python"
 ## end alias ================================================================
 
+## begin user PATH ==========================================================
+export PATH="$PATH:~/mine/bin/"
+## end user PATH ============================================================
+
 ## begin env setting ========================================================
 ### Setting for default editor.
 #### The default editor I use is vim.
