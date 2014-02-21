@@ -73,3 +73,7 @@
 
 - name: "Make gcc/g++ 4.8 the default version"
   command: update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+
+# For using minted for latex.
+- name: "Install pygmentize"
+  apt: pkg="python-pygments" state=present
