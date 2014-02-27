@@ -125,7 +125,7 @@ export PATH="$PATH:~/mine/bin/"
 #### Define the absolute path of vim, thus to make the update of vi easier.
 # export VIM=/usr/bin
 # export VIMRUNTIME=/usr/share/vim/vim73
-export VIM="/usr/loca/bin/"
+export VIM="/usr/local/bin/"
 export VIMRUNTIME="/usr/local/share/vim/vim74/"
 #### Two variables concerning default editor of linux.
 export EDITOR=$VIM/vim
