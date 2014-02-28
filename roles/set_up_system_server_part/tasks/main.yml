@@ -61,7 +61,7 @@
 - name: "Install tree"
   apt: pkg=tree state=present
 
-# Install self-compiled vim74.
+  # Install self-compiled vim74.
 - name: "Copy compiled vim tarball"
   copy: src="vim74.tar.gz" dest="/tmp"
 
@@ -77,3 +77,10 @@
 # For using minted for latex.
 - name: "Install pygmentize"
   apt: pkg="python-pygments" state=present
+
+  # Install self-compiled gdb7.7.
+- name: "Copy compiled gdb tarball"
+  copy: src="gdb-7.7.tar.gz" dest="/tmp"
+
+- name: "Install gdb in /usr/local/bin and make it system default."
+  script: install_gdb.sh
