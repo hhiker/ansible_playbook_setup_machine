@@ -1,0 +1,6 @@
+---
+- name: "Add usergroup hadoop"
+  command: sudo addgroup hadoop
+
+- name: "Add user hduser in hadoop group"
+  command: sudo adduser --ingroup hadoop hduser
