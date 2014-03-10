@@ -4,7 +4,6 @@
     connection: local
     user: shawn
     gather_facts: no
-    sudo: yes
 
     roles:
-      - vim_plugins_dependences
+      - files_vim_needs

@@ -1,0 +1,10 @@
+---
+
+- name: "Install pep8.py"
+  copy: src="pep8.py" dest="~/mine/bin" force=yes
+
+- name: "Make pep8.py executable"
+  shell: chmod u+x ~/mine/bin/pep8.py
+
+- name: "Create symbol link of pep8.py"
+  shell: ln -sf ~/mine/bin/pep8.py ~/mine/bin/pep8

@@ -1,0 +1,10 @@
+---
+
+  - hosts: local_machine
+    connection: local
+    user: shawn
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - programs_vim_needs

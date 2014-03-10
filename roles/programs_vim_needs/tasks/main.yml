@@ -1,0 +1,4 @@
+---
+
+- name: "Install ack-grep"
+  apt: pkg=ack-grep state=present
