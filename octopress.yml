@@ -7,4 +7,4 @@
     sudo: yes
 
     roles:
-      - set_up_system_desktop_part
+      - octopress
