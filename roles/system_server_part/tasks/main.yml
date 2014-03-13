@@ -89,3 +89,6 @@
 
 - name: "Install bvi."
   apt: pkg=bvi state=present
+
+- name: "Install octave."
+  apt: pkg=octave3.2 state=present
