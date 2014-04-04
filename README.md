@@ -1,6 +1,15 @@
-# ansible playbooks for setting up ubuntu 12.04 from fresh installation
+# Playbooks locally and remotely
 
-This is the playbooks I wrote for the purpose of the title.
+The playbooks in the repo can handle the following need:
+1. setting up ubuntu 12.04 from fresh installation on local machine and remote
+   machines, which also includes personal config in home folder.
+2. Do some adhoc command on remote machine:
+  1. `./adhoc/check_alive.yml`: check which machines has down.
+  2. `./adhoc/add_shawn_as_sysadmin_on_servers.yml`: what the title implies.
+
+TODO: instructions.
+
+TODO: format of hosts file..
 
 ```bash
 ├── set_up_system_desktop_part  # For setting up desktop part of the os.

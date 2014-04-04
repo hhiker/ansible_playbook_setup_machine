@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  vars:
+      password: '$6$qp2VFo9VJTV$m6XGqwrU.BuV5aSunw8kWwdpr2vbEZuxdPYC/uIpm0iTUXa469ozYgTO3.yb9/A/i8my5Phlod04EGqsNM5xT1'
+  tasks:
+  - name: "Add shawn as sysadmin on all the servers"
+    user: name=shawn groups=sudo password={{ password }} shell=/bin/bash
+    sudo: yes
