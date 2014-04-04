@@ -1,0 +1,17 @@
+---
+# The prerequisite
+# =================
+# 1. you have to make sure you can log onto remote servers using user shawn.
+# 2. you should have a pair of keys generated for ssh under folder ~/.ssh/ .
+
+# What this role does
+# =================
+# make the machine able to ssh on the remotes servers, by adding public key on
+# remote servers.
+
+  - hosts: servers
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - make_servers_sshable

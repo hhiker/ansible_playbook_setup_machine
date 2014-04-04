@@ -1,0 +1,9 @@
+---
+- name: "Copy public key of control machine"
+  copy: src="~/.ssh/id_rsa.pub" dest="/tmp/"
+
+- name: "Install public key"
+  shell: cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
+
+- name: "Remove copied public key"
+  file: path="/tmp/id_rsa.pub" state=absent
