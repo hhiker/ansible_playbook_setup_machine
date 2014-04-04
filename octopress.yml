@@ -1,4 +1,5 @@
 ---
+# This ansible playbook will install octopress under ~/mine/softwares/octopress
 
   - hosts: local_machine
     connection: local

@@ -1,4 +1,6 @@
 ---
+# This playbook will initialize my personal configuration of the `/home`
+# directory.
 
   - hosts: local_machine
     connection: local

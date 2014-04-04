@@ -1,5 +1,7 @@
 ---
 # file: site.yml
+# This playbook includes the following three playbooks, which will do necessary
+# initialization installation to make ubuntu more functional.
 
 - include: system_server_part.yml
 - include: shawn_init.yml

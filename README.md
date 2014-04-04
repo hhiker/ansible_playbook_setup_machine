@@ -33,3 +33,5 @@ recompile it when use these playbooks in new platform.
 `fcitx.tar.gz` is the config files for fctix usage, which contains my input
 method history. Remember to check on the most recently one in dropbox. So are
 vimrc, bashrc etc..
+
+Role `hadoop` is not finished yet.

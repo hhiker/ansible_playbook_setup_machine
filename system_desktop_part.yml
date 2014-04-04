@@ -1,4 +1,6 @@
 ---
+# This playbook will install the necessary programs of ubuntu 12.04 that does
+# need a deskop environment to run.
 
   - hosts: local_machine
     connection: local

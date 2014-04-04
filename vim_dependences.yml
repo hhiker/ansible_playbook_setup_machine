@@ -1,4 +1,6 @@
 ---
+# This playbook will include the following two roles, which will install the
+# necessary files and programs my vim configuration needs to function.
 
 - include: programs_vim_needs.yml
 - include: files_vim_needs.yml
