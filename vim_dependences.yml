@@ -2,5 +2,23 @@
 # This playbook will include the following two roles, which will install the
 # necessary files and programs my vim configuration needs to function.
 
-- include: programs_vim_needs.yml
-- include: files_vim_needs.yml
+# This playbook will install the program dependences of vim to let my vim
+# configuration work.
+  - hosts: local_machine
+    connection: local
+    user: shawn
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - programs_vim_needs
+
+# This playbook will install the file dependences of vim to let my vim
+# configuration work.
+  - hosts: local_machine
+    connection: local
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - files_vim_needs
