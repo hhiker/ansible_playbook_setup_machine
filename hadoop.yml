@@ -1,8 +1,7 @@
 ---
 # This role is not finished yet...
 
-  - hosts: local_machine
-    connection: local
+  - hosts: "{{ hosts }}"
     user: shawn
     gather_facts: no
     sudo: yes

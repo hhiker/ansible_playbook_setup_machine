@@ -3,8 +3,7 @@
 # This playbook includes the following three playbooks, which will do necessary
 # initialization installation to make ubuntu more functional.
 
-  - hosts: local_machine
-    connection: local
+  - hosts: "{{ hosts }}"
     user: shawn
     gather_facts: no
     sudo: yes
@@ -19,8 +18,7 @@
 
 # This playbook will initialize my personal configuration of the `/home`
 # directory.
-  - hosts: local_machine
-    connection: local
+  - hosts: "{{ hosts }}"
     user: shawn
     gather_facts: no
 
