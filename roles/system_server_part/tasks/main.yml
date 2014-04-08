@@ -10,12 +10,16 @@
 
 - name: "Update apt cache"
   apt: update_cache=yes
+  tags:
+    - update
 
 - name: "Install aptitude"
   apt: pkg=aptitude state=present
 
 - name: "Upgrade system"
   apt: upgrade=yes
+  tags:
+    - update
 
 # Install necessary libraries for compiling vim.
 - name: "Install xorg-dev. This package enable X11 related feautre of vim"
