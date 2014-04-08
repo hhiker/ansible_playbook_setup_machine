@@ -19,7 +19,7 @@
 
 # Install necessary libraries for compiling vim.
 - name: "Install xorg-dev. This package enable X11 related feautre of vim"
-  apt: pkg=libncurses5-dev state=present
+  apt: pkg=xorg-dev state=present
 
 - name: "Install libncurses"
   apt: pkg=libncurses5-dev state=present
