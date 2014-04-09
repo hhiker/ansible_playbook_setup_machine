@@ -20,7 +20,7 @@ The playbooks in the repo can handle the following need:
   * ./roles/octopress
 5. Setup petuum:
   * ./roles/petuum
-6. Add user on remote machine:
+6. Add user on remote machine(not finished):
   * ./roles/user_init
 
 ## Test & Deployment

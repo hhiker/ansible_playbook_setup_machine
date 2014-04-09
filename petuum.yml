@@ -1,5 +1,5 @@
 ---
-# This playbook will install dependences of petuum-0.2.
+# This playbook will install petuum-0.2 on remote host.
 
   - hosts: "{{ hosts }}"
     user: shawn
