@@ -1,4 +1,7 @@
 ---
+- name: "Create .ssh folder if not existing."
+  file: path="~/.ssh/" state=directory
+
 - name: "Copy public key of control machine"
   copy: src="~/.ssh/id_rsa.pub" dest="/tmp/"
 

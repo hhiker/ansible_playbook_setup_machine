@@ -9,7 +9,7 @@
 # make the machine able to ssh on the remotes servers, by adding public key on
 # remote servers.
 
-  - hosts: servers
+  - hosts: "{{ hosts }}"
     user: shawn
     gather_facts: no
 
