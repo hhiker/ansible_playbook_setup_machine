@@ -1,0 +1,22 @@
+---
+- name: "Upgrade gcc/g++ to 4.8"
+  apt: pkg="g++-4.8" state=present
+  sudo: yes
+
+- name: "Make gcc/g++ 4.8 the default version"
+  command: update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+  sudo: yes
+
+- name: "Install petuum dependences."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - autoconf
+    - libtool
+    - uuid-dev
+    - openssh-server
+    - libopenmpi-dev
+    - libssl-dev
+  sudo: yes
+
+- name: "Install petuum."
+  script: install_petuum.sh
