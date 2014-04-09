@@ -1,0 +1,7 @@
+---
+- hosts: servers
+  gather_facts: no
+  tasks:
+  - name: 'Restart servers ...'
+    command: shutdown -r now
+    sudo: yes
