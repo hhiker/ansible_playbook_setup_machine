@@ -1,0 +1,11 @@
+---
+# This playbook will setup user's home foler initially for usage.
+# TODO: this playbook should create user as well, for the time being, it has
+# not. It just setting up user home foler.
+
+  - hosts: "{{ hosts }}"
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - user_init

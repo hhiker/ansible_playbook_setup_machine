@@ -1,0 +1,21 @@
+---
+- name: "Install .bashrc"
+  copy: src=".bashrc" dest="~/.bashrc"
+
+- name: "Install .tmux.conf"
+  copy: src=".tmux.conf" dest="~/.tmux.conf"
+
+- name: "Git clone vim config tarball"
+  git: repo=https://github.com/hhiker/.vim dest=~/.vim
+
+- name: "Install vimrc"
+  copy: src=".vimrc" dest="~/"
+
+- name: "Install gitignore"
+  copy: src="gitignore" dest="~/.gitignore"
+
+- name: "Install useful scripts"
+  copy: src="bin" dest="~/mine/"
+
+- name: "Make scripts executable"
+  shell: chmod 744 ~/mine/bin/*
