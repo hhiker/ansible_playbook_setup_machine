@@ -1,0 +1,16 @@
+---
+# The prerequisite
+# =================
+# 1. you have to make sure you can log onto remote servers.
+
+# What this role does
+# =================
+# It generates rsa type ssh key on remote folder and fetch them into
+# ./scripts/pub_keys.
+
+  - hosts: "{{ hosts }}"
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - fetch_public_keys

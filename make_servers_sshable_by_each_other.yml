@@ -1,0 +1,15 @@
+---
+# The prerequisite
+# =================
+# 1. you have to make sure you can log onto remote servers using user shawn.
+
+# What this role does
+# =================
+# This playbook will make remote hosts eable to ssh onto each other.
+
+  - hosts: "{{ hosts }}"
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - make_servers_sshable_by_each_other

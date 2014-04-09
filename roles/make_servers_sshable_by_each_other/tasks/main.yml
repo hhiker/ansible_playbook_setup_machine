@@ -1,0 +1,18 @@
+---
+- name: "Copy file stored public keys."
+  copy: src="servers_pub_keys.txt" dest="/tmp"
+
+- name: "Install public key"
+  shell: cat /tmp/servers_pub_keys.txt >> ~/.ssh/authorized_keys
+
+- name: "Remove copied public key"
+  file: path="/tmp/servers_pub_keys.txt" state=absent
+
+- name: "Copy file stored known hosts."
+  copy: src="known_hosts" dest="/tmp"
+
+- name: "Install public key"
+  shell: cat /tmp/known_hosts >> ~/.ssh/known_hosts
+
+- name: "Remove copied public key"
+  file: path="/tmp/known_hosts" state=absent

@@ -1,0 +1,6 @@
+---
+- name: 'Make sure hosts have ssh public keys.'
+  script: generate_key.sh
+
+- name: 'Get public keys of servers.'
+  fetch: src=~/.ssh/id_rsa.pub dest=./scripts/pub_keys
