@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# This scripts will make remote hosts eable to ssh onto each other.
-
 if [ $# -ne 1 ];
 then
     echo "Usage: $0 <username>"
-    echo " This scripts will make remote hosts eable to ssh onto each other."
+    echo "This scripts will make remote hosts eable to ssh onto each other."
+    echo "NOTE: Since the keys are appended to remote hosts authorized_host file, there may be duplicates."
     exit
 fi
 
