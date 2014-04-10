@@ -3,5 +3,5 @@
   file: path="~/.ssh/" state=directory
 
 - name: "Install public key of the control machine."
-  authorized_key:  user=shawn 
-                    key="{{ lookup('file', '/home/shawn/.ssh/id_rsa.pub') }}"
+  authorized_key: user=shawn 
+                  key="{{ lookup('file', '/home/shawn/.ssh/id_rsa.pub') }}"
