@@ -1,6 +1,6 @@
 # Playbooks locally and remotely
 
-The playbooks in the repo can handle the following need:
+## Roles
 
 1. setting up ubuntu 12.04 from fresh installation on local machine and remote
    machines, which also includes personal config in home folder. It involves the
@@ -22,6 +22,10 @@ The playbooks in the repo can handle the following need:
   * ./roles/petuum
 6. Add user on remote machine(not finished):
   * ./roles/user_init
+
+## Scripts
+`./scripts/make_servers_sshable_on_each_other.sh`  This scripts will make remote
+hosts eable to ssh onto each other.
 
 ## Test & Deployment
 
