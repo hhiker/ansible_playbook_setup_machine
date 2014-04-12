@@ -1,0 +1,9 @@
+---
+# This playbook set up and run lda example shipped with petuum-0.2.
+
+  - hosts: "{{ hosts }}"
+    user: shawn
+    gather_facts: no
+
+    roles:
+      - run_lda_on_petuum

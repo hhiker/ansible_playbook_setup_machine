@@ -1,0 +1,6 @@
+---
+- name: "Install machine config file."
+  copy: src=wsm_servers dest=/home/shawn/mine/code/petuum/machinefiles/
+
+- name: "LDA preparation."
+  script: lda_preparation.sh
