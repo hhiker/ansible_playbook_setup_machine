@@ -1,0 +1,16 @@
+---
+
+- name: "Install dependences of scikit."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - build-essential
+    - python-dev
+    - python-numpy
+    - python-setuptools
+    - python-scipy
+    - libatlas-dev
+    - libatlas3gf-base
+    - python-matplotlib
+
+- name: "INstall scikit."
+  command: pip install -U scikit-learn
