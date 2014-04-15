@@ -12,5 +12,5 @@
     - libatlas3gf-base
     - python-matplotlib
 
-- name: "INstall scikit."
+- name: "Install scikit."
   command: pip install -U scikit-learn
