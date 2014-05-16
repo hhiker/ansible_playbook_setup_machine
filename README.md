@@ -11,6 +11,7 @@
   * ./roles/shawn_init
   * ./roles/system_desktop_part
   * ./roles/system_server_part
+  * ./roles/scikit
 2. Do some adhoc command on remote machine:
   * `./adhoc/check_alive.yml`: check which machines has down.
   * `./adhoc/add_shawn_as_sysadmin_on_servers.yml`: what the title implies.
