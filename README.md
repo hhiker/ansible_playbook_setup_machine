@@ -21,6 +21,8 @@
   * ./roles/octopress
 5. Setup petuum:
   * ./roles/petuum
+  * ./roles/run_lda_on_petuum Note that it only installs LDA on servers. The
+    program is actually needed to start locally.
 6. Add user on remote machine(not finished):
   * ./roles/user_init
 
