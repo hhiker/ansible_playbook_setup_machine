@@ -1,0 +1,10 @@
+---
+# It should use the user module of ansible, not adhoc command.
+# Change it next time using this playbook.
+- hosts: "{{ hosts }}"
+  user: administrator
+  gather_facts: no
+  tasks:
+  - name: 'Remove user {{ user }}...'
+    command: deluser --remove-home {{ user }}
+    sudo: yes
