@@ -1,0 +1,72 @@
+---
+# Install gnome desktop.
+- name: "Install gnome-shell"
+  apt: pkg=gnome-shell state=present
+
+- name: "Install gnome-session-fallback to make the switch from unity to gnome possible"
+  apt: pkg=gnome-session-fallback state=present
+
+- name: "Install gnome-shell-extensions"
+  apt: pkg=gnome-shell-extensions state=present
+
+- name: "Install gnome-tweak-tool"
+  apt: pkg=gnome-tweak-tool state=present
+
+# Uninstall unnecessary desktop softwares.
+- name: "Uninstall ibus"
+  apt: pkg=ibus state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk3 state=absent
+
+- name: "Uninstall firefox"
+  apt: pkg=firefox state=absent
+
+# # Install necessary desktop softwares.
+- name: "Install fcitx"
+  apt: pkg=fcitx state=present
+
+- name: "Install fcitx"
+  apt: pkg=fcitx-sunpinyin state=present
+
+- name: "Install guake"
+  apt: pkg=guake state=present
+
+- name: "Install stardict"
+  apt: pkg=guake state=present
+
+- name: "Install vlc"
+  apt: pkg=vlc state=present
+
+- name: "Install wallch"
+  apt: pkg=wallch state=present
+
+- name: "Install pandoc"
+  apt: pkg=pandoc state=present
+
+- name: "Install okular"
+  apt: pkg=okular state=present
+
+- name: "Install google-chrome-stable"
+  apt: pkg=google-chrome-stable state=present
+
+- name: "Install xchm"
+  apt: pkg=xchm state=present
+
+- name: "Install tree"
+  apt: pkg=tree state=present
+
+- name: "Install p7zip-full"
+  apt: pkg=p7zip-full state=present
+
+- name: "Install shutter"
+  apt: pkg=shutter state=present
+
+- name: "Install wine"
+  apt: pkg=wine state=present
+
+- name: "Install calibre"
+  apt: pkg=calibre state=present

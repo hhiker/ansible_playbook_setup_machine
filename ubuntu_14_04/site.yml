@@ -1,0 +1,26 @@
+---
+# file: site.yml
+# This playbook includes relevant playbooks, which will do necessary
+# initialization installation to make ubuntu more functional.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      # This playbook will install the necessary programs of ubuntu 14.04 that
+      # does not need a deskop environment to run.
+      - system_server_part
+      # This playbook will install the necessary programs of ubuntu 14.04 that
+      # does need a deskop environment to run.
+      - system_desktop_part
+
+# This playbook will initialize customized configuration of the `/home`
+# directory.
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+
+    roles:
+      - user_init
