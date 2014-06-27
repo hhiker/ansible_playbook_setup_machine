@@ -1,0 +1,15 @@
+---
+- name: "Install ruby1.9.3"
+  apt: pkg="ruby1.9.3" state="present"
+
+- name: "Make ruby1.9.3 default ruby interpreter."
+  command: sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.3 90
+
+- name: "Clone personal octopress"
+  shell: git clone https://github.com/hhiker/octopress ~/mine/softwares/octopress
+
+- name: "Install dependencies: install bundler"
+  command: sudo gem install bundler
+
+- name: "bundler install"
+  script: bundle_install.sh

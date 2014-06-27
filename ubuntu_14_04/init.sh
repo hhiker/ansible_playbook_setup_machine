@@ -10,7 +10,7 @@ sudo apt-get install python-pip
 sudo pip install paramiko PyYAML jinja2 httplib2
 sudo apt-get install openssh-server
 
-# # Varaibles.
+# Varaibles.
 ROOT_FOLDER="$HOME/mine"
 SOFTWARE_FOLDER="${ROOT_FOLDER}/softwares"
 
@@ -29,9 +29,14 @@ ssh 127.0.0.1
 
 PLAYBOOK_HOME="${ROOT_FOLDER}/playbooks/ubuntu_14_04/"
 
-# source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
+source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
 
 # Run playbooks.
 ansible-playbook "${PLAYBOOK_HOME}/site.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" -K \
+    --extra-vars "hosts=local_machine user=shawn"
+
+# Install octopress.
+ansible-playbook "${PLAYBOOK_HOME}/octopress.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=shawn"

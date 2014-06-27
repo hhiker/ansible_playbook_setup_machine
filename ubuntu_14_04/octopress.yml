@@ -1,0 +1,10 @@
+---
+# This ansible playbook will install octopress under ~/mine/softwares/octopress
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - octopress
