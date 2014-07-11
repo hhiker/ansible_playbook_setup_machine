@@ -1,0 +1,6 @@
+---
+- name: "Install power saving softwares"
+  apt: pkg={{ item }} state=present
+  with_items:
+    - powertop
+    - laptop-mode-tools
