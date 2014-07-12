@@ -92,3 +92,6 @@
 
 - name: "Install nmon."
   apt: pkg=nmon state=present
+
+- name: "Install unrar."
+  apt: pkg=unrar state=present
