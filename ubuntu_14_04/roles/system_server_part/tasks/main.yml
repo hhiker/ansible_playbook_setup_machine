@@ -95,3 +95,6 @@
 
 - name: "Install unrar."
   apt: pkg=unrar state=present
+
+- name: "Install dos2unix."
+  apt: pkg=dos2unix state=present
