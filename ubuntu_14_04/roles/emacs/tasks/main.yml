@@ -1,0 +1,6 @@
+---
+# - name: "Install emacs"
+  # apt: pkg="emacs" state="present"
+
+- name: "Install xsel"
+  apt: pkg="xsel" state="present"

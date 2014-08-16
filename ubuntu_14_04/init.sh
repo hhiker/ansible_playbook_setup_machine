@@ -40,3 +40,8 @@ ansible-playbook "${PLAYBOOK_HOME}/site.yml" \
 ansible-playbook "${PLAYBOOK_HOME}/octopress.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=shawn"
+
+# Install emacs.
+ansible-playbook "${PLAYBOOK_HOME}/emacs.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" -K \
+    --extra-vars "hosts=local_machine user=shawn"
