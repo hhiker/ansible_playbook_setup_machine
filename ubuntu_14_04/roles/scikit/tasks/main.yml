@@ -1,0 +1,22 @@
+---
+
+- name: "Install dependences of scikit."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - build-essential
+    - python-dev
+    - python-numpy
+    - python-setuptools
+    - python-scipy
+    - libatlas-dev
+    - libatlas3gf-base
+    - python-matplotlib
+
+- name: "make sure that ATLAS is used to provide the implementation of the BLAS linear algebra routines:"
+  command: update-alternatives --set libblas.so.3 /usr/lib/atlas-base/atlas/libblas.so.3
+
+- name: "make sure that ATLAS is used to provide the implementation of the LAPACK linear algebra routines:"
+  command: update-alternatives --set liblapack.so.3 /usr/lib/atlas-base/atlas/liblapack.so.3
+
+- name: "Install scikit."
+  command: pip install -U scikit-learn

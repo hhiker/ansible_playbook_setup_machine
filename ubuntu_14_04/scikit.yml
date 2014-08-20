@@ -1,0 +1,10 @@
+---
+# This playbook will install scikit on remote host.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - scikit
