@@ -1,6 +1,9 @@
 ---
-# - name: "Install emacs"
-  # apt: pkg="emacs" state="present"
+- name: "Install emacs"
+  apt: pkg="emacs" state="present"
 
-- name: "Install xsel"
+- name: "Install xsel."
   apt: pkg="xsel" state="present"
+
+- name: "Install dependences via pip."
+  script: init.sh
