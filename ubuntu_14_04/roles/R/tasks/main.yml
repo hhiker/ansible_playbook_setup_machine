@@ -1,0 +1,9 @@
+---
+- name: "Install R."
+  apt: pkg="r-base" state="present"
+
+- name: "Install gfortran for compiling R package."
+  apt: pkg="gfortran" state="present"
+
+- name: "Install liblapack-dev for compiling R package."
+  apt: pkg="liblapack-dev" state="present"
