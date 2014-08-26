@@ -84,12 +84,6 @@
 - name: "Install octave."
   apt: pkg=octave state=present
 
-- name: "Install ipython."
-  command: pip install ipython
-
-- name: "Install matplotlib."
-  apt: pkg=python-matplotlib state=present
-
 - name: "Install nmon."
   apt: pkg=nmon state=present
 

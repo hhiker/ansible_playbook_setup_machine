@@ -1,0 +1,15 @@
+---
+- name: "Install ipython."
+  command: pip install ipython
+
+- name: "Install matplotlib."
+  apt: pkg=python-matplotlib state=present
+
+- name: "Install pyzmq."
+  command: pip install pyzmq
+
+- name: "Install tornado."
+  command: pip install tornado
+
+- name: "Install pyreadline."
+  command: pip install pyreadline

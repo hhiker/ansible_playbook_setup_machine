@@ -1,0 +1,10 @@
+---
+# This ansible playbook will setup emacs.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - ipython
