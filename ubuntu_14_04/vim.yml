@@ -1,0 +1,10 @@
+---
+# This ansible playbook will setup self-compiled vim.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - vim

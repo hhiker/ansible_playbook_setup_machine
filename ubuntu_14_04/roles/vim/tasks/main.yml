@@ -1,0 +1,32 @@
+---
+# Install necessary libraries for compiling vim.
+- name: "Install xorg-dev. This package enable X11 related feautre of vim"
+  apt: pkg=xorg-dev state=present
+
+- name: "Install libncurses"
+  apt: pkg=libncurses5-dev state=present
+
+- name: "Install python2.7-dev"
+  apt: pkg=python2.7-dev state=present
+
+- name: "Install lua5.2"
+  apt: pkg=lua5.2 state=present
+
+- name: "Install liblua5.2"
+  apt: pkg=liblua5.2-dev state=present
+
+- name: "Install perl library"
+  apt: pkg=libperl-dev state=present
+
+- name: "Install tcl library"
+  apt: pkg=tcl-dev state=present
+
+- name: "Install ruby library"
+  apt: pkg=ruby-dev state=present
+
+# Install self-compiled vim74.
+- name: "Copy compiled vim tarball"
+  copy: src="vim74.tar.gz" dest="/tmp"
+
+- name: "Install vim in /usr/local/bin and make it system default."
+  script: install_vim.sh
