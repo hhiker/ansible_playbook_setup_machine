@@ -60,3 +60,6 @@
 
 - name: "Install dos2unix."
   apt: pkg=dos2unix state=present
+
+- name: "Install curl."
+  apt: pkg=curl state=present
