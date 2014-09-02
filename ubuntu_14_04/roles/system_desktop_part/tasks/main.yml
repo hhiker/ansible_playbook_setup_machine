@@ -70,3 +70,6 @@
 
 - name: "Install calibre"
   apt: pkg=calibre state=present
+
+- name: "Install terminator"
+  apt: pkg=terminator state=present
