@@ -38,6 +38,9 @@
 - name: "Install stardict"
   apt: pkg=guake state=present
 
+- name: "Uninstall totem"
+  apt: pkg=totem state=absent
+
 - name: "Install vlc"
   apt: pkg=vlc state=present
 
