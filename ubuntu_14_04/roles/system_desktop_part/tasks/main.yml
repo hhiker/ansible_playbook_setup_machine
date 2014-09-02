@@ -53,6 +53,13 @@
 - name: "Install google-chrome-stable"
   apt: pkg=google-chrome-stable state=present
 
+- name: "Fix chrome encoding problem."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - ttf-wqy-microhei
+    - ttf-wqy-zenhei
+    - xfonts-wqy
+
 - name: "Install xchm"
   apt: pkg=xchm state=present
 
