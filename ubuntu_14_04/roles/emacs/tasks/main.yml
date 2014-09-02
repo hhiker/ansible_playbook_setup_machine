@@ -7,3 +7,7 @@
 
 - name: "Install dependences via pip."
   script: init.sh
+
+- name: "Install robe dependences."
+  sudo: no
+  command: gem install pry
