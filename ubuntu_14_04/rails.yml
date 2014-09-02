@@ -1,0 +1,10 @@
+---
+# This ansible playbook will setup rails.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - rails
