@@ -6,8 +6,12 @@
   apt: pkg="xsel" state="present"
 
 - name: "Install dependences via pip."
-  script: init.sh
+  command: pip install {{ item }}
+  with_items:
+    - cpplint
+    - virtualenv
 
+  # This does not work.
 - name: "Install robe dependences."
   sudo: no
   command: gem install pry
