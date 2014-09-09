@@ -8,10 +8,13 @@
 - name: "Install dependences via pip."
   command: pip install {{ item }}
   with_items:
-    - cpplint
-    - virtualenv
+    - cpplint # Code lint(cpp).
+    - virtualenv # Jedi(python)
+    - rope # ropemacs(python)
+    - ropemacs # ropemacs(python)
 
-  # This does not work.
-- name: "Install robe dependences."
-  sudo: no
-  command: gem install pry
+  # This does not work. All ruby related stuff does not work with
+  # ansible for the time being.
+# - name: "Install robe dependences."
+#   sudo: no
+#   command: gem install pry
