@@ -83,3 +83,8 @@
 
 - name: "Install terminator"
   apt: pkg=terminator state=present
+
+- name: "Install mp4 to mp3 converter."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - pacpl
