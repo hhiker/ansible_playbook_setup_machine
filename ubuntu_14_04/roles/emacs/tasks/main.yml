@@ -9,6 +9,7 @@
   command: pip install {{ item }}
   with_items:
     - cpplint # Code lint(cpp).
+    - pylint # Code lint(python).
     - virtualenv # Jedi(python)
     - rope # ropemacs(python)
     - ropemacs # ropemacs(python)
