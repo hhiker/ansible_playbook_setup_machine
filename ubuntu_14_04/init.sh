@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Clean up home folder.
 cd
@@ -43,5 +43,20 @@ ansible-playbook "${PLAYBOOK_HOME}/octopress.yml" \
 
 # Install emacs.
 ansible-playbook "${PLAYBOOK_HOME}/emacs.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" -K \
+    --extra-vars "hosts=local_machine user=shawn"
+
+# Install sklearn.
+ansible-playbook "${PLAYBOOK_HOME}/scikit.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" -K \
+    --extra-vars "hosts=local_machine user=shawn"
+
+# Install R.
+ansible-playbook "${PLAYBOOK_HOME}/R.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" -K \
+    --extra-vars "hosts=local_machine user=shawn"
+
+# Install ipython
+ansible-playbook "${PLAYBOOK_HOME}/ipython.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=shawn"
