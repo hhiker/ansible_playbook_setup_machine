@@ -125,15 +125,16 @@ export PATH="$PATH:~/mine/bin/"
 #### Define the absolute path of vim, thus to make the update of vi easier.
 # export VIM=/usr/bin
 # export VIMRUNTIME=/usr/share/vim/vim73
-export VIM="/usr/local/bin/"
-export VIMRUNTIME="/usr/local/share/vim/vim74/"
+# export VIM="/usr/local/bin/"
+# export VIMRUNTIME="/usr/local/share/vim/vim74/"
 #### Two variables concerning default editor of linux.
-export EDITOR=$VIM/vim
-export VISUAL=$VIM/vim
+# export EDITOR=$VIM/vim
+# export VISUAL=$VIM/vim
 #### The default editor defined for git.
-export GIT_EDITOR=$VIM/vim
+export GIT_EDITOR=vim
 
 source ~/mine/softwares/ansible/hacking/env-setup
+source /etc/profile.d/rvm.sh
 ## end env setting ==========================================================
 
 ## begin color config for ls ================================================
@@ -175,6 +176,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="${SOFTWARES_PATH}/oprofile/bin:$PATH"
 export PATH="${SOFTWARES_PATH}/android-sdk-linux/platform-tools/:$PATH"
 export PATH="${SOFTWARES_PATH}/android-sdk-linux/tools/:$PATH"
+export PATH="${SOFTWARES_PATH}/mendeley/mendeleydesktop-1.11-linux-x86_64/bin/:$PATH"
+export PATH="/usr/local/rvm/gems/ruby-2.1.2/bin:$PATH"
 
 export MANPATH="$MANPATH:${SOFTWARES_PATH}/latex/texmf/doc/man/"
 export MANPATH="$MANPATH:${SOFTWARES_PATH}/apache2/man/"
@@ -195,6 +198,7 @@ alias ll="ls -lha"
 alias n="nautilus ."
 alias py="python"
 alias v="vim"
+alias e="emacs -nw"
 alias mysql="mysql -u shawn -p --pager=less --local-infile=1 travel_reservation"
 alias mysqlu="mysql -u root -p --pager=less --local-infile=1"
 # my alias --------------------------------------------------
