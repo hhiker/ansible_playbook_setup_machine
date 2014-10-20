@@ -32,6 +32,9 @@
 - name: "Install fcitx"
   apt: pkg=fcitx-sunpinyin state=present
 
+- name: "Install sogoupinyin"
+  apt: pkg=sogoupinyin state=present
+
 - name: "Install guake"
   apt: pkg=guake state=present
 
