@@ -134,7 +134,6 @@ export PATH="$PATH:~/mine/bin/"
 export GIT_EDITOR=vim
 
 source ~/mine/softwares/ansible/hacking/env-setup
-source /etc/profile.d/rvm.sh
 ## end env setting ==========================================================
 
 ## begin color config for ls ================================================
