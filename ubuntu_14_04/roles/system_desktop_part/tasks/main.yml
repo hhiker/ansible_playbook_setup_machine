@@ -94,3 +94,6 @@
 
 - name: "Install alarm."
   apt: pkg=alarm-clock-applet state=present
+
+- name: "Install virtualbox."
+  apt: pkg=virtualbox state=present
