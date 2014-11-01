@@ -91,3 +91,6 @@
   apt: pkg={{ item }} state=present
   with_items:
     - pacpl
+
+- name: "Install alarm."
+  apt: pkg=alarm-clock-applet state=present
