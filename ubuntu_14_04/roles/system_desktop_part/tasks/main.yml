@@ -97,3 +97,6 @@
 
 - name: "Install virtualbox."
   apt: pkg=virtualbox state=present
+
+- name: "Install markdown"
+  apt: pkg=markdown state=present
