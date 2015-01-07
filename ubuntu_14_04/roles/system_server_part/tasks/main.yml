@@ -2,11 +2,11 @@
 - name: "Change the sources.list"
   copy: src="sources.list" dest="/etc/apt/sources.list" force=yes
 
-- name: "Change and source.list.d"
-  copy: src="sources.list.d/" dest="/etc/apt/sources.list.d" force=yes
+# - name: "Change and source.list.d"
+  # copy: src="sources.list.d/" dest="/etc/apt/sources.list.d" force=yes
 
-- name: "Install apt-keys"
-  copy: src="trusted.gpg" dest="/etc/apt/" force=yes
+# - name: "Install apt-keys"
+  # copy: src="trusted.gpg" dest="/etc/apt/" force=yes
 
 - name: "Update apt cache"
   apt: update_cache=yes
