@@ -45,6 +45,7 @@ cd
 echo -e 'y\n' |  ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh-add
+# TODO(Shuai) Change known_host directly instead ssh once.
 ssh 127.0.0.1
 
 PLAYBOOK_HOME="${SOFTWARE_FOLDER}/playbooks/ubuntu_14_04"
@@ -56,10 +57,11 @@ ansible-playbook "${PLAYBOOK_HOME}/site.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=$USER_NAME"
 
-# Install octopress.
-ansible-playbook "${PLAYBOOK_HOME}/octopress.yml" \
-    -i "${PLAYBOOK_HOME}/hosts" -K \
-    --extra-vars "hosts=local_machine user=$USER_NAME"
+# # Install octopress.
+# Use this manually.
+# ansible-playbook "${PLAYBOOK_HOME}/octopress.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"
 
 # Install emacs.
 ansible-playbook "${PLAYBOOK_HOME}/emacs.yml" \

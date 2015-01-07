@@ -1,5 +1,7 @@
 ---
 # This ansible playbook will install octopress under ~/mine/softwares/octopress
+# Since now my blog source needs passwd to clone, the blog source folder should
+# be setup manually before using this.
 
   - hosts: "{{ hosts }}"
     user: "{{ user }}"
