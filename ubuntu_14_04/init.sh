@@ -82,3 +82,10 @@ ansible-playbook "${PLAYBOOK_HOME}/R.yml" \
 ansible-playbook "${PLAYBOOK_HOME}/ipython.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=$USER_NAME"
+
+# Install caffe.
+# playbook for caffe is commented in case of accidentally install it since
+# normally it only will be installed on powerful pc or server.
+# ansible-playbook "${PLAYBOOK_HOME}/caffe.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"

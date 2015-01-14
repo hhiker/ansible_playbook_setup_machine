@@ -1,0 +1,10 @@
+---
+# This ansible playbook will install dependences of caffe.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - caffe
