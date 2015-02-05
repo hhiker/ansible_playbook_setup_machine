@@ -9,7 +9,10 @@
   command: pip install {{ item }}
   with_items:
     - cpplint # Code lint(cpp).
-    - pylint # Code lint(python).
+    - flake8 # Code lint(python
+    # Pylint always make confusing error report about extern library. So I
+    # switch to flake8.
+    # - pylint # Code lint(python).
     - virtualenv # Jedi(python)
     - rope # ropemacs(python)
     - ropemacs # ropemacs(python)
