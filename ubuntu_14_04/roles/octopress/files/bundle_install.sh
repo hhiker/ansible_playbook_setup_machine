@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd ~/mine/softwares/blog/
-sudo bundle install
+bundle install
 sudo gem install kramdown
