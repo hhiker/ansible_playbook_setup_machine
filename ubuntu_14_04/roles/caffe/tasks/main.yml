@@ -14,7 +14,7 @@
     - protobuf-compiler
 
 - name: "Install python wrapper dependences of caffe."
-  command: sudo pip install {{ item }}
+  command: pip install {{ item }}
   with_items:
     - Cython
     - numpy
@@ -32,3 +32,4 @@
     - protobuf
     - python-gflags
     - pyyaml
+    - Theano
