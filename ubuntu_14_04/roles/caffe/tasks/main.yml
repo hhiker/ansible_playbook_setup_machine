@@ -25,6 +25,7 @@
     - ipython
     - h5py
     - leveldb
+    - lmdb
     - networkx
     - nose
     - pandas
