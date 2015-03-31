@@ -100,3 +100,6 @@
 
 - name: "Install markdown"
   apt: pkg=markdown state=present
+
+- name: "Install perl-tk for gui of tlgmr"
+  apt: pkg=perl-tk state=present
