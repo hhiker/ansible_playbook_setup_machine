@@ -1,0 +1,10 @@
+---
+# This ansible playbook will setup texlive.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - texlive

@@ -1,0 +1,12 @@
+---
+- name: "Install texlive."
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - texlive
+    - texlive-xetex
+    - perl-tk # For GUI of tlgmr
+    - xzdec # xz-format compression utility, usd by tlgmr
+
+- name: "Post installation intialization."
+  sudo: no
+  script: install_packages.sh
