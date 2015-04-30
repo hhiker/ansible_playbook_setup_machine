@@ -6,6 +6,7 @@
     - texlive-xetex
     - perl-tk # For GUI of tlgmr
     - xzdec # xz-format compression utility, usd by tlgmr
+    - biber # For better bibliography management.
 
 - name: "Post installation intialization."
   sudo: no

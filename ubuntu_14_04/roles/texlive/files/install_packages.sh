@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 17
+#     Update #: 19
 #
 #
 # Commentary:
@@ -30,6 +30,8 @@ tlmgr install framed fontawesome
 tlmgr install xecjk l3kernel l3packages
 # For moderncv
 tlmgr install moderncv xargs lipsum everypage
+# For beamer citation.
+tlmgr install biblatex logreq
 
 #
 # install_packages.sh ends here
