@@ -22,3 +22,6 @@
 
 - name: "Git clone emacs config"
   git: repo=https://github.com/shawnLeeZX/emacs.d dest=~/.emacs.d accept_hostkey=true
+
+- name: "Install pretty print for stl for gdb. Remember to modify libstdcxx path."
+  copy: src="gdbinit" dest="~/.gdbinit"
