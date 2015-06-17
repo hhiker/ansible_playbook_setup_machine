@@ -12,6 +12,7 @@
     - libgoogle-glog-dev
     - liblmdb-dev
     - protobuf-compiler
+    - graphviz # to draw net.
 
 - name: "Install python wrapper dependences of caffe."
   command: pip install {{ item }}
@@ -34,3 +35,4 @@
     - python-gflags
     - pyyaml
     - Theano
+    - pydot # to draw net.
