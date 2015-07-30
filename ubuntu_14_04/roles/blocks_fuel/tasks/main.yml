@@ -1,0 +1,11 @@
+---
+- name: "Install dependences."
+  command: pip install {{ item }}
+  with_items:
+    - numpy
+    - six
+    - progressbar2
+    - PyYaml
+    - toolz
+    - picklable-itertools
+    - tables

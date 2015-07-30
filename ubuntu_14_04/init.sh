@@ -16,7 +16,6 @@ then
     usage
     exit 0
 fi
-
 USER_NAME=$1
 
 # # Clean up home folder.
@@ -90,7 +89,12 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
 #     -i "${PLAYBOOK_HOME}/hosts" -K \
 #     --extra-vars "hosts=local_machine user=$USER_NAME"
 
-# Install texlive.
-ansible-playbook "${PLAYBOOK_HOME}/texlive.yml" \
+# # Install texlive.
+# ansible-playbook "${PLAYBOOK_HOME}/texlive.yml" \
+#     -i "${PLAYBOOK_HOME}/hosts" -K \
+#     --extra-vars "hosts=local_machine user=$USER_NAME"
+
+# Install blocks and fuel.
+ansible-playbook "${PLAYBOOK_HOME}/blocks_fuel.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=$USER_NAME"
