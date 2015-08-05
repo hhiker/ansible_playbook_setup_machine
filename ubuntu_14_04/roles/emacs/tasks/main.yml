@@ -14,8 +14,11 @@
     # switch to flake8.
     # - pylint # Code lint(python).
     - virtualenv # Jedi(python)
-    - rope # ropemacs(python)
-    - ropemacs # ropemacs(python)
+    - jedi # Awesome autocompletion and static analysis library for python.
+    # The following two are replaced by jedi.
+    # - rope # ropemacs(python)
+    # - ropemacs # ropemacs(python)
+    - importmagic # The goal of this package is to be able to automatically manage imports in Python.
 
   # This does not work. All ruby related stuff does not work with
   # ansible for the time being.
