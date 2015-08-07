@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 19
+#     Update #: 20
 #
 #
 # Commentary:
@@ -32,6 +32,8 @@ tlmgr install xecjk l3kernel l3packages
 tlmgr install moderncv xargs lipsum everypage
 # For beamer citation.
 tlmgr install biblatex logreq
+# For floating comments.
+tlmgr install textpos
 
 #
 # install_packages.sh ends here
