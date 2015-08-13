@@ -14,6 +14,11 @@
     - protobuf-compiler
     - graphviz # to draw net.
 
+- name: "Install some mostly needed packages(not necessarily needed by Caffe)."
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - python-opencv # python wrapper for opencv
+
 - name: "Install python wrapper dependences of caffe."
   command: pip install {{ item }}
   with_items:
