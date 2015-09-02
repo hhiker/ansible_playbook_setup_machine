@@ -36,7 +36,7 @@ SOFTWARE_FOLDER="${ROOT_FOLDER}/softwares"
 # mkdir -p ${SOFTWARE_FOLDER}
 
 # # Setup ansible
-# git clone git://github.com/ansible/ansible.git ${SOFTWARE_FOLDER}/ansible --recursive
+# git clone https://github.com/shawnLeeZX/frozen-ansible ${SOFTWARE_FOLDER}/ansible --recursive
 # git clone https://github.com/shawnLeeZX/ansible_playbooks ${SOFTWARE_FOLDER}/playbooks
 
 # # Setup ssh.
