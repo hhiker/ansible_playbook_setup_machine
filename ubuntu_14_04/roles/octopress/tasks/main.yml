@@ -5,6 +5,8 @@
 - name: "Make ruby1.9.3 default ruby interpreter."
   command: update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.3 90
 
+# The commented out part should be carried out manually. They are left as hints
+# in the repository.
 # - name: "Clone personal octopress"
   # sudo: no
   # shell: git clone https://gitlab.com/shawnLeeZX/blog-source.git ~/mine/softwares/octopress
@@ -12,6 +14,6 @@
 - name: "Install dependencies: install bundler"
   command: gem install bundler
 
-- name: "bundler install"
-  sudo: no
-  script: bundle_install.sh
+# - name: "bundler install"
+#   sudo: no
+#   script: bundle_install.sh
