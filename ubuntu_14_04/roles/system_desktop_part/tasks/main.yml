@@ -100,3 +100,6 @@
 
 - name: "Install markdown"
   apt: pkg=markdown state=present
+
+- name: "Install gparted"
+  apt: pkg=gparted state=present
