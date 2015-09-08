@@ -2,6 +2,9 @@
 - name: "Install .bashrc"
   copy: src=".bashrc" dest="~/.bashrc"
 
+- name: "Install .gnomerc"
+  copy: src="gnomerc" dest="~/.gnomerc"
+
 - name: "Install .tmux.conf"
   copy: src=".tmux.conf" dest="~/.tmux.conf"
 
