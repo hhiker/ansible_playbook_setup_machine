@@ -63,3 +63,6 @@
 
 - name: "Install curl."
   apt: pkg=curl state=present
+
+- name: "Install perl document package."
+  apt: pkg=perl-doc state=present
