@@ -66,3 +66,6 @@
 
 - name: "Install perl document package."
   apt: pkg=perl-doc state=present
+
+- name: "Install pip for installing python packages."
+  apt: pkg=python-pip state=present

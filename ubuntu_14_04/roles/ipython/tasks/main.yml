@@ -18,3 +18,5 @@
   command: pip install {{ item }}
   with_items:
     - jsonschema
+    - decorator
+    - notebook
