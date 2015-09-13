@@ -5,13 +5,8 @@
   with_items:
     - build-essential
     - python-dev
-    - python-numpy
-    - python-setuptools
-    - python-scipy
     - libatlas-dev
     - libatlas3gf-base
-    - python-matplotlib
-    - seaborn # To make matplotlib better.
 
 - name: "make sure that ATLAS is used to provide the implementation of the BLAS linear algebra routines:"
   command: update-alternatives --set libblas.so.3 /usr/lib/atlas-base/atlas/libblas.so.3
@@ -20,4 +15,11 @@
   command: update-alternatives --set liblapack.so.3 /usr/lib/atlas-base/atlas/liblapack.so.3
 
 - name: "Install scikit."
-  command: pip install -U scikit-learn
+  command: pip install -U {{ item }}
+  with_items:
+    - numpy
+    - matplotlib
+    - scipy
+    - setuptools
+    - scikit-learn
+    - seaborn # To make matplotlib better.
