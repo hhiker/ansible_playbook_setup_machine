@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 20
+#     Update #: 21
 #
 #
 # Commentary:
@@ -34,6 +34,8 @@ tlmgr install moderncv xargs lipsum everypage
 tlmgr install biblatex logreq
 # For floating comments.
 tlmgr install textpos
+# For including files from different folders.
+tlmgr install import
 
 #
 # install_packages.sh ends here
