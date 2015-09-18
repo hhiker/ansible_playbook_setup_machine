@@ -3,7 +3,7 @@
   command: pip install ipython
 
 - name: "Install matplotlib."
-  apt: pkg=python-matplotlib state=present
+  command: pip install matplotlib
 
 - name: "Install pyzmq."
   command: pip install pyzmq
@@ -18,3 +18,5 @@
   command: pip install {{ item }}
   with_items:
     - jsonschema
+    - decorator
+    - notebook
