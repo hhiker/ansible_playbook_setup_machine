@@ -1,6 +1,5 @@
 ---
 # This ansible playbook will setup emacs.
-# The playbook should be rewritten next time installing emacs.
 
   - hosts: "{{ hosts }}"
     user: "{{ user }}"

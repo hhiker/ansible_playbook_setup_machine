@@ -1,0 +1,11 @@
+---
+# This ansible playbook will prepare dependency for a douban FM linux client..
+# The source: https://github.com/vstorm/Groove
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - douban_fm
