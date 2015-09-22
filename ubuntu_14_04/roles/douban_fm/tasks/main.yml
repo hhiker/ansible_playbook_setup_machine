@@ -2,5 +2,9 @@
 - name: "Install dependency for douban fm client."
   apt: pkg={{ item }} state="present"
   with_items:
-    python3-pyqt4 # GUI
-    python3-bs4 # Used for parsing HTML and XML
+    - python3-pyqt4 # GUI
+    - python3-bs4 # Used for parsing HTML and XML
+
+- name: "Clone personal octopress"
+  sudo: no
+  shell: git clone https://github.com/shawnLeeZX/Groove ~/mine/softwares/groove
