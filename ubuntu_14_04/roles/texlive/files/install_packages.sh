@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 21
+#     Update #: 26
 #
 #
 # Commentary:
@@ -19,9 +19,15 @@
 #
 # Code:
 
+
+
 tlmgr init-usertree
 # Let tlmgr download documentation when installing new packages.
 tlmgr option docfiles 1
+
+# For beamer
+# #########################################################################
+
 # For mdframed.
 tlmgr install mdframed etoolbox needspace
 # For fancy title page.
@@ -36,6 +42,9 @@ tlmgr install biblatex logreq
 tlmgr install textpos
 # For including files from different folders.
 tlmgr install import
+
+# For general latex.
+tlmgr install ifplatform xstring lineno paralist cleveref
 
 #
 # install_packages.sh ends here
