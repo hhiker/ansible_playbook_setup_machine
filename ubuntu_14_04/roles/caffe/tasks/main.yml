@@ -41,3 +41,7 @@
     - pyyaml
     - Theano
     - pydot # to draw net.
+    # The following is not the official requirements, but just extra packages
+    # used when writing programs.
+    - psutil  # Monitor CPU usage.
+    - pyprind  # Progress indicator.
