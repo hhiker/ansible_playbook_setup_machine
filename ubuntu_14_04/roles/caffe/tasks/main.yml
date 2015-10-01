@@ -13,6 +13,9 @@
     - liblmdb-dev
     - protobuf-compiler
     - graphviz # to draw net.
+    # Though there are alternatives are MKL and OpenBLAS, atlas is the most
+    # accessiable.
+    - libatlas-base-dev
 
 - name: "Install some mostly needed packages(not necessarily needed by Caffe)."
   apt: pkg={{ item }} state="present"
