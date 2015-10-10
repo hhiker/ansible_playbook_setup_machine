@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 26
+#     Update #: 27
 #
 #
 # Commentary:
@@ -44,6 +44,10 @@ tlmgr install textpos
 tlmgr install import
 
 # For general latex.
+# #########################################################################
+# Though those two packages have been included by default, it seems to remove
+# some bugs to install it again. Maybe the new version is installed.
+tlmgr install fontspec xltxtra
 tlmgr install ifplatform xstring lineno paralist cleveref
 
 #
