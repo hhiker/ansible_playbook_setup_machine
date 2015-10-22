@@ -103,3 +103,6 @@
 
 - name: "Install gparted"
   apt: pkg=gparted state=present
+
+- name: "Install gdesklets"
+  apt: pkg=gdesklets state=present
