@@ -13,6 +13,9 @@
     - liblmdb-dev
     - protobuf-compiler
     - graphviz # to draw net.
+    # Though there are alternatives are MKL and OpenBLAS, atlas is the most
+    # accessiable.
+    - libatlas-base-dev
 
 - name: "Install some mostly needed packages(not necessarily needed by Caffe)."
   apt: pkg={{ item }} state="present"
@@ -41,3 +44,7 @@
     - pyyaml
     - Theano
     - pydot # to draw net.
+    # The following is not the official requirements, but just extra packages
+    # used when writing programs.
+    - psutil  # Monitor CPU usage.
+    - pyprind  # Progress indicator.
