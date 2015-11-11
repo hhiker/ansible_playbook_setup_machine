@@ -69,3 +69,6 @@
 
 - name: "Install pip for installing python packages."
   apt: pkg=python-pip state=present
+
+- name: "Install apt-file."
+  apt: pkg=apt-file state=present
