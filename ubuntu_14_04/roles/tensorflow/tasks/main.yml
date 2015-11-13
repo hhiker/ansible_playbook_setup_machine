@@ -1,0 +1,9 @@
+---
+- name: "Install prerequisite of tensorflow."
+  # TODO Factor out common numerical libraries from Caffe and tensorflow, so
+  # the role works when they are installed independently.
+  # note that this role is written after using Caffe, so caffe actually has
+  # installed many of the dependences. Using this role alone may mot work.
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - swig

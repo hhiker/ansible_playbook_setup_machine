@@ -1,0 +1,10 @@
+---
+# This ansible playbook is used for testing when adding a new functions.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - test

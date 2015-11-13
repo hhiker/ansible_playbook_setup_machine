@@ -1,0 +1,4 @@
+---
+- name: "Task to be tested"
+  # Add any task you want to test bolow. Current one is just an example.
+  apt_repository: repo='ppa:webupd8team/java'

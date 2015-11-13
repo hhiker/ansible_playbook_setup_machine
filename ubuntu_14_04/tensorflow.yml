@@ -1,0 +1,10 @@
+---
+# This ansible playbook for tensorflow.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - tensorflow
