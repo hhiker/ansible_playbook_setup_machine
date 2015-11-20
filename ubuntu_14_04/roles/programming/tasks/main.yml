@@ -1,0 +1,4 @@
+---
+# Programming libraries for python.
+- name: "Install glog."
+  command: pip install glog
