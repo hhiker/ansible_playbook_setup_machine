@@ -1,4 +1,6 @@
 ---
+# This playbook installs necessary software for using Ubuntu as a server.
+
 - name: "Change the sources.list"
   copy: src="sources.list" dest="/etc/apt/sources.list" force=yes
 

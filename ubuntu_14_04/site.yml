@@ -11,10 +11,10 @@
     roles:
       # This playbook will install the necessary programs of ubuntu 14.04 that
       # does not need a deskop environment to run.
-      - system_server_part
+      - server
       # This playbook will install the necessary programs of ubuntu 14.04 that
       # does need a deskop environment to run.
-      - system_desktop_part
+      - desktop
       # For laptop.
       - laptop
 

@@ -1,4 +1,18 @@
 ---
+# This playbook installs necessary software for using Ubuntu as desktop.
+
+# Setup necessary ppas.
+- name: "Add ppa for missing gstreamer0.10-ffmpeg"
+  apt_repository: repo='ppa:mc3man/trusty-media'
+
+- name: "Add ppa for Calendar indicator."
+  apt_repository: repo='ppa:atareao/atareao'
+
+- name: "Update apt cache"
+  apt: update_cache=yes
+  tags:
+    - update
+
 # Install gnome desktop.
 - name: "Install gnome-shell"
   apt: pkg=gnome-shell state=present
@@ -92,9 +106,6 @@
   with_items:
     - pacpl
 
-- name: "Install alarm."
-  apt: pkg=alarm-clock-applet state=present
-
 - name: "Install virtualbox."
   apt: pkg=virtualbox state=present
 
@@ -104,5 +115,17 @@
 - name: "Install gparted"
   apt: pkg=gparted state=present
 
-- name: "Install gdesklets"
-  apt: pkg=gdesklets state=present
+- name: "Install some applets"
+  apt: pkg={{ item }} state=present
+  with_items:
+    - gdesklets
+    - alarm-clock-applet
+    - calendar-indicator
+
+- name: "Install dependences to play audio and video."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - gstreamer0.10-ffmpeg
+    - ubuntu-restricted-extras
+    - libavcodec-extra
+    - libdvdread4
