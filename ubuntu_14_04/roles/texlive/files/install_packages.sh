@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 27
+#     Update #: 28
 #
 #
 # Commentary:
@@ -49,6 +49,10 @@ tlmgr install import
 # some bugs to install it again. Maybe the new version is installed.
 tlmgr install fontspec xltxtra
 tlmgr install ifplatform xstring lineno paralist cleveref
+
+# For math typeset.
+# #########################################################################
+tlmgr install commath
 
 #
 # install_packages.sh ends here
