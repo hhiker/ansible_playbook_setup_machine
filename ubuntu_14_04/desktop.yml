@@ -1,0 +1,13 @@
+---
+# file: desktop.yml
+# This playbook use role 
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      # This playbook will install the necessary programs of ubuntu 14.04 that
+      # does need a deskop environment to run.
+      - desktop

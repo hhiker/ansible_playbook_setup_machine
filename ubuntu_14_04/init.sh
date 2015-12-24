@@ -94,7 +94,15 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
 #     -i "${PLAYBOOK_HOME}/hosts" -K \
 #     --extra-vars "hosts=local_machine user=$USER_NAME"
 
-# Install blocks and fuel.
-ansible-playbook "${PLAYBOOK_HOME}/blocks_fuel.yml" \
+# # Install blocks and fuel.
+# ansible-playbook "${PLAYBOOK_HOME}/blocks_fuel.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"
+
+# ansible-playbook "${PLAYBOOK_HOME}/test.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"
+
+ansible-playbook "${PLAYBOOK_HOME}/desktop.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=$USER_NAME"
