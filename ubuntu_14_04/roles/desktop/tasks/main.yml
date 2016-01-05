@@ -8,6 +8,9 @@
 - name: "Add ppa for Calendar indicator."
   apt_repository: repo='ppa:atareao/atareao'
 
+- name: "Add ppa for Variety desktop changer."
+  apt_repository: repo='ppa:peterlevi/ppa'
+
 - name: "Update apt cache"
   apt: update_cache=yes
   tags:
@@ -61,8 +64,8 @@
 - name: "Install vlc"
   apt: pkg=vlc state=present
 
-- name: "Install wallch"
-  apt: pkg=wallch state=present
+- name: "Install variety"
+  apt: pkg=variety state=present
 
 - name: "Install pandoc"
   apt: pkg=pandoc state=present
