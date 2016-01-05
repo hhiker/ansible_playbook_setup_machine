@@ -56,7 +56,7 @@
   apt: pkg=guake state=present
 
 - name: "Install stardict"
-  apt: pkg=guake state=present
+  apt: pkg=stardict state=present
 
 - name: "Uninstall totem"
   apt: pkg=totem state=absent
