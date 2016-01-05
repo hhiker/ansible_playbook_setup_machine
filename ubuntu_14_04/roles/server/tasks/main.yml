@@ -7,6 +7,9 @@
 - name: "Added ppa to install official Java."
   apt_repository: repo='ppa:webupd8team/java'
 
+- name: "Added ppa to install various unrelease/git builds applications."
+  apt_repository: repo='ppa:webupd8team/unstable'
+
 # - name: "Change and source.list.d"
   # copy: src="sources.list.d/" dest="/etc/apt/sources.list.d" force=yes
 
