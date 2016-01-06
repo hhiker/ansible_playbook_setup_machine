@@ -2,3 +2,6 @@
 # Programming libraries for python.
 - name: "Install glog."
   command: pip install glog
+
+- name: "Install pytest."
+  command: pip install pytest

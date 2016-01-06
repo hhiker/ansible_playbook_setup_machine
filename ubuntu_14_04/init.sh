@@ -103,6 +103,10 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
     # -i "${PLAYBOOK_HOME}/hosts" -K \
     # --extra-vars "hosts=local_machine user=$USER_NAME"
 
-ansible-playbook "${PLAYBOOK_HOME}/desktop.yml" \
+# ansible-playbook "${PLAYBOOK_HOME}/desktop.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"
+
+ansible-playbook "${PLAYBOOK_HOME}/programming.yml" \
     -i "${PLAYBOOK_HOME}/hosts" -K \
     --extra-vars "hosts=local_machine user=$USER_NAME"
