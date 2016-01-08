@@ -1,20 +1,13 @@
 ---
 # This playbook installs necessary software for using Ubuntu as a server.
 
-- name: "Change the sources.list"
-  copy: src="sources.list" dest="/etc/apt/sources.list" force=yes
-
-- name: "Added ppa to install official Java."
+- name: "Added ppa to install official Java. Note the acutual Java is not
+         installed since it needs interactly say yes to some licence
+         agreement. Install it by yourself if you need."
   apt_repository: repo='ppa:webupd8team/java'
 
 - name: "Added ppa to install various unrelease/git builds applications."
   apt_repository: repo='ppa:webupd8team/unstable'
-
-# - name: "Change and source.list.d"
-  # copy: src="sources.list.d/" dest="/etc/apt/sources.list.d" force=yes
-
-# - name: "Install apt-keys"
-  # copy: src="trusted.gpg" dest="/etc/apt/" force=yes
 
 - name: "Update apt cache"
   apt: update_cache=yes
@@ -81,5 +74,18 @@
 - name: "Install apt-file."
   apt: pkg=apt-file state=present
 
-- name: "Install official Java."
-  apt: pkg=oracle-java8-installer state=present
+- name: "Install whois for mkpass to generate encrypted password."
+  apt: pkg=apt-file state=present
+
+- name: "Install gfortran"
+  apt: pkg="gfortran" state="present"
+
+- name: "Install autoconf"
+  apt: pkg="autoconf" state="present"
+
+- name: "Install automake"
+  apt: pkg="automake" state="present"
+
+# It would ask for a license agreement, which has to be interactive.
+# - name: "Install official Java."
+#   apt: pkg=oracle-java8-installer state=present

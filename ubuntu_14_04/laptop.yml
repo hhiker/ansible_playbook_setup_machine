@@ -1,0 +1,10 @@
+---
+# Role to install software to use Ubuntu 14.04 on a laptop.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - laptop

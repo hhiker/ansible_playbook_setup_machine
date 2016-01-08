@@ -106,40 +106,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Here begins customized configurations.
-## begin alias ==============================================================
-alias v="vim"
-alias du="du -h"
-alias ll="ls -lha"
-alias n="nautilus ."
-alias py="python"
-## end alias ================================================================
-
-## begin user PATH ==========================================================
-export PATH="$PATH:~/mine/bin/"
-## end user PATH ============================================================
-
-## begin env setting ========================================================
-### Setting for default editor.
-#### The default editor I use is vim.
-#### Define the absolute path of vim, thus to make the update of vi easier.
-# export VIM=/usr/bin
-# export VIMRUNTIME=/usr/share/vim/vim73
-# export VIM="/usr/local/bin/"
-# export VIMRUNTIME="/usr/local/share/vim/vim74/"
-#### Two variables concerning default editor of linux.
-# export EDITOR=$VIM/vim
-# export VISUAL=$VIM/vim
-#### The default editor defined for git.
-export GIT_EDITOR=vim
-
-source ~/mine/softwares/ansible/hacking/env-setup
-## end env setting ==========================================================
-
-## begin color config for ls ================================================
-export LS_COLORS=$LS_COLORS:'di=0;35'
-## end color config for ls ==================================================
-
 ## for viewing apt, dpkg, aptitude log ======================================
 function apt-history(){
       case "$1" in
@@ -162,26 +128,15 @@ function apt-history(){
 }
 ## for viewing apt, dpkg, aptitude log ======================================
 
-# my system environment--------------------------------------------------
-SOFTWARES_PATH=$HOME/mine/softwares
+# Here begins customized configurations.
+## begin alias ==============================================================
+alias v="vim"
+alias du="du -h"
+alias ll="ls -lha"
+alias n="nautilus ."
+alias py="python"
+## end alias ================================================================
 
-export PATH=${SOFTWARES_PATH}/jdk1.7.0_40/bin:$PATH
-export PATH="$PATH:${SOFTWARES_PATH}/google_appengine/"
-export PATH=$PATH:${SOFTWARES_PATH}/latex/bin/x86_64-linux/
-export PATH="$PATH:${SOFTWARES_PATH}/bin/"
-export PATH="$PATH:${SOFTWARES_PATH}/apache2/bin/"
-export PATH="$PATH:${SOFTWARES_PATH}/apache-ant-1.9.2/bin/"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="${SOFTWARES_PATH}/oprofile/bin:$PATH"
-export PATH="${SOFTWARES_PATH}/android-sdk-linux/platform-tools/:$PATH"
-export PATH="${SOFTWARES_PATH}/android-sdk-linux/tools/:$PATH"
-export PATH="${SOFTWARES_PATH}/mendeley/mendeleydesktop-1.11-linux-x86_64/bin/:$PATH"
-export PATH="/usr/local/rvm/gems/ruby-2.1.2/bin:$PATH"
-
-export MANPATH="$MANPATH:${SOFTWARES_PATH}/latex/texmf/doc/man/"
-export MANPATH="$MANPATH:${SOFTWARES_PATH}/apache2/man/"
-export MANPATH="$MANPATH:${SOFTWARES_PATH}/jdk1.7.0_40/man/"
-export MANPATH="$MANPATH:${SOFTWARES_PATH}/oprofile/share/man"
 
 # my alias --------------------------------------------------
 alias df='df -h'
@@ -196,7 +151,8 @@ alias du="du -h"
 alias ll="ls -lha"
 alias n="nautilus ."
 alias py="python"
-alias v="vim"
+# For self-compiled vim.
+alias v="${HOME}/mine/softwares/vim/bin/vim"
 alias e="emacs -nw"
 alias mysql="mysql -u shawn -p --pager=less --local-infile=1 travel_reservation"
 alias mysqlu="mysql -u root -p --pager=less --local-infile=1"
@@ -204,3 +160,14 @@ alias mysqlu="mysql -u root -p --pager=less --local-infile=1"
 
 # For wine =====================================================
 alias foxit='wine /home/shawn/.wine/drive_c/Program\ Files\ \(x86\)/Foxit\ Software/Foxit\ Reader/Foxit\ Reader.exe'
+
+# Temporary path setup for project developing.
+export PATH="${HOME}/work/project/sp_cnn/preprocessing/:$PATH"
+export PYLEARN2_DATA_PATH=/data-002/data/pylearn2/
+export PYTHONPATH="${HOME}/work/project/sp_cnn:${PYTHONPATH}"
+
+# For Torch
+. /home/shawn/work/third_party/torch/install/bin/torch-activate
+# For Expresso
+export CAFFE_ROOT=$HOME/work/third_party/caffe/
+export EXPRESSO_ROOT=$HOME/work/third_party/expresso/

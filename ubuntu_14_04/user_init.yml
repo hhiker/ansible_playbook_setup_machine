@@ -1,0 +1,19 @@
+---
+# Add user to hosts and set up its home directory.
+# You need to pass int two vars in command line using --extra-vars "user=XX,
+# new_user=YY". `user` is the admin account you are using, and `new_user` is
+# the new user you are creating.
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    sudo: yes
+    gather_facts: no
+
+    roles:
+      - add_user
+
+  - hosts: "{{ hosts }}"
+    user: "{{ new_user }}"
+    gather_facts: no
+
+    roles:
+      - setup_user_home

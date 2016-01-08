@@ -1,0 +1,3 @@
+* TODO
+** TODO Write a better .bashrc and .profile template.
+** TODO Update playbooks to remove the deprecated in Ansible 2.0

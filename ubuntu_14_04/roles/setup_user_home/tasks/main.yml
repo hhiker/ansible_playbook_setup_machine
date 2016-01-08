@@ -1,6 +1,9 @@
 ---
 - name: "Install .bashrc"
-  copy: src=".bashrc" dest="~/.bashrc"
+  copy: src="bashrc" dest="~/.bashrc"
+
+- name: "Install .profile"
+  copy: src="profile" dest="~/.profile"
 
 - name: "Install .gnomerc"
   copy: src="gnomerc" dest="~/.gnomerc"

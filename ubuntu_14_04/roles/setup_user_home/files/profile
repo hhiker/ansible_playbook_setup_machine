@@ -1,0 +1,71 @@
+## begin env setting ========================================================
+### Setting for default editor.
+#### The default editor I use is vim.
+#### Define the absolute path of vim, thus to make the update of vi easier.
+# export VIM=/usr/bin
+# export VIMRUNTIME=/usr/share/vim/vim73
+# export VIM="/usr/local/bin/"
+# export VIMRUNTIME="/usr/local/share/vim/vim74/"
+#### Two variables concerning default editor of linux.
+# export EDITOR=$VIM/vim
+# export VISUAL=$VIM/vim
+#### The default editor defined for git.
+export GIT_EDITOR=vim
+
+source ~/mine/softwares/ansible/hacking/env-setup
+# Make Caps Lock a Ctrl Key.
+setxkbmap -option ctrl:nocaps 
+## end env setting ==========================================================
+
+## begin color config for ls ================================================
+export LS_COLORS=$LS_COLORS:'di=0;35'
+## end color config for ls ==================================================
+
+# my system environment--------------------------------------------------
+SOFTWARES_PATH=$HOME/mine/softwares
+
+## begin user PATH ==========================================================
+export PATH="$PATH:~/mine/bin/"
+export PATH="$PATH:${SOFTWARES_PATH}/google_appengine/"
+export PATH=$PATH:${SOFTWARES_PATH}/latex/bin/x86_64-linux/
+export PATH="$PATH:${SOFTWARES_PATH}/bin/"
+export PATH="$PATH:${SOFTWARES_PATH}/apache2/bin/"
+export PATH="$PATH:${SOFTWARES_PATH}/apache-ant-1.9.2/bin/"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="${SOFTWARES_PATH}/oprofile/bin:$PATH"
+export PATH="${SOFTWARES_PATH}/android-sdk-linux/platform-tools/:$PATH"
+export PATH="${SOFTWARES_PATH}/android-sdk-linux/tools/:$PATH"
+export PATH="${SOFTWARES_PATH}/mendeley/mendeleydesktop-1.11-linux-x86_64/bin/:$PATH"
+export PATH="/usr/local/rvm/gems/ruby-2.1.2/bin:$PATH"
+export PATH="${HOME}/mine/softwares/matlab-R2014a/bin/:$PATH"
+export PATH="${HOME}/work/third_party/caffe/build/tools/:$PATH"
+export PATH="${HOME}/work/third_party/caffe/tools/extra:$PATH"
+export PATH="${HOME}/work/third_party/caffe/python:$PATH"
+export PATH="${HOME}/work/project/sp_cnn/analysis/:$PATH"
+export PATH="${HOME}/work/project/sp_cnn/training/:$PATH"
+export PATH="${HOME}/work/project/sp_cnn/preprocessing/:$PATH"
+export PATH="${HOME}/.local/lib/python2.7/site-packages/tensorflow/tensorboard/:$PATH"
+
+export MANPATH="$MANPATH:${SOFTWARES_PATH}/latex/texmf/doc/man/"
+export MANPATH="$MANPATH:${SOFTWARES_PATH}/apache2/man/"
+export MANPATH="$MANPATH:${SOFTWARES_PATH}/jdk1.7.0_40/man/"
+export MANPATH="$MANPATH:${SOFTWARES_PATH}/oprofile/share/man"
+
+export PYTHONPATH="${HOME}/work/third_party/caffe/python:${PYTHONPATH}"
+export PYTHONPATH="${HOME}/work/third_party/blocks:${PYTHONPATH}"
+export PYTHONPATH="${HOME}/work/third_party/fuel:${PYTHONPATH}"
+# export PYTHONPATH="${HOME}/work/third_party/pylearn2:${PYTHONPATH}"
+export PYTHONPATH="${HOME}/work/third_party/keras:${PYTHONPATH}"
+export PYTHONPATH="${HOME}/work/project/sp_cnn/analysis:${PYTHONPATH}"
+export PYTHONPATH="${HOME}/work/project/sp_cnn/akid:${PYTHONPATH}"
+
+# For CUDA
+export PATH="/usr/local/cuda/bin/:$PATH"
+export CPATH="/usr/local/cudnn/include/:$CPATH"
+# export LIBRARY="/usr/local/cudnn/:$LIBRARY"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/intel/mkl/lib/intel64/"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cuda/lib64/"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cudnn/lib/"
+export CUDA_HOME="/usr/local/cuda/"
+
+. ~/.bashrc

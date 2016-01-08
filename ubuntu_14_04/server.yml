@@ -1,11 +1,12 @@
 ---
+# file: server.yml
 
   # This playbook will install the necessary programs to run ubuntu 14.04 as a
-  # desktop environment.
+  # server.
   - hosts: "{{ hosts }}"
     user: "{{ user }}"
     gather_facts: no
     sudo: yes
 
     roles:
-      - desktop
+      - server

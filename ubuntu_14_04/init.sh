@@ -4,10 +4,16 @@ usage()
 {
     printf "%b" "
 Usage:
-init.sh will do ubuntu 14.04 setup automatically. All you need to input is your
-user name.
+
+Set up Ansible on Control Machine.
+
+The OS should be Ubuntu 14.04.
 
 bash init.sh USER_NAME
+
+Args:
+    USER_NAME: You user name on the control machine you would like to use
+        Ansible with.
 "
 }
 
@@ -16,16 +22,21 @@ then
     usage
     exit 0
 fi
+
 USER_NAME=$1
 
 # # Clean up home folder.
 # cd
-# rmdir  Desktop Documents Music Pictures Public Templates Videos
+# rmdir Desktop Documents Music Pictures Public Templates Videos
 
 # # Install necessary softwares.
 # sudo apt-get -y install tmux git vim
+# # Better output format for Ansible.
+# sudo apt-get -y install cowsay
+# # We have to use password to sometimes.
+# sudo apt-get -y install sshpass
 # sudo apt-get -y install python-pip
-# sudo pip install paramiko PyYAML jinja2 httplib2
+# sudo pip install paramiko PyYAML jinja2 httplib2 six
 # sudo apt-get -y install openssh-server
 
 # Varaibles.

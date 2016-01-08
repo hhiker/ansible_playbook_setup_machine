@@ -1,7 +1,7 @@
 ---
 # file: site.yml
-# This playbook includes relevant playbooks, which will do necessary
-# initialization installation to make ubuntu more functional.
+# This playbook includes relevant playbooks, which will do necessary initial
+# installation to make ubuntu more functional in a laptop desktop environment.
 
   - hosts: "{{ hosts }}"
     user: "{{ user }}"

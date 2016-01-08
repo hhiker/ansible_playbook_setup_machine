@@ -1,0 +1,21 @@
+---
+# This playbook includes relevant playbooks, which sets up a developing
+# environment on servers.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - server
+      - programming
+      - ipython
+      - scikit
+
+  # - hosts: "{{ hosts }}"
+  #   user: "{{ user }}"
+  #   gather_facts: no
+
+  #   roles:
+  #     - user_init
