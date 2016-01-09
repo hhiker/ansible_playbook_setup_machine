@@ -13,9 +13,9 @@
       - ipython
       - scikit
 
-  # - hosts: "{{ hosts }}"
-  #   user: "{{ user }}"
-  #   gather_facts: no
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
 
-  #   roles:
-  #     - user_init
+    roles:
+      - user_init

@@ -134,7 +134,6 @@ function apt-history(){
 
 # aliases
 # #########################################################################
-alias v="vim"
 alias du="du -h"
 alias ll="ls -lha"
 alias n="nautilus ."
