@@ -1,0 +1,9 @@
+---
+  # Set up home director for a new user. You need to pass new_user in as
+  # variable by --extra-vars "new_user=USER_NAME".
+  - hosts: "{{ hosts }}"
+    user: "{{ new_user }}"
+    gather_facts: no
+
+    roles:
+      - setup_user_home

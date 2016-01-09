@@ -106,7 +106,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-## for viewing apt, dpkg, aptitude log ======================================
+
+# Customized configurations begins.
+# #########################################################################
+
+## for viewing apt, dpkg, aptitude log.
+# #########################################################################
 function apt-history(){
       case "$1" in
         install)
@@ -126,48 +131,22 @@ function apt-history(){
               ;;
       esac
 }
-## for viewing apt, dpkg, aptitude log ======================================
 
-# Here begins customized configurations.
-## begin alias ==============================================================
+# aliases
+# #########################################################################
 alias v="vim"
 alias du="du -h"
 alias ll="ls -lha"
 alias n="nautilus ."
 alias py="python"
-## end alias ================================================================
-
-
-# my alias --------------------------------------------------
 alias df='df -h'
-alias cdai="cd /windows/out_of_mediocrity/artificial_intelligence/"
-alias cdmu="cd /windows/requiescat_in_pace/database/music/"
-alias cdvi="cd /windows/requiescat_in_pace/database/video/"
-alias cdos="cd /windows/out_of_mediocrity/computer/os/linux/linux/"
-alias cdso="cd /windows/out_of_mediocrity/social_science/"
-alias cdcu="cd /windows/out_of_mediocrity/curriculum_materials/"
-alias cdou="cd /windows/out_of_mediocrity/"
-alias du="du -h"
-alias ll="ls -lha"
-alias n="nautilus ."
-alias py="python"
+
 # For self-compiled vim.
-alias v="${HOME}/mine/softwares/vim/bin/vim"
+if [ -f "${HOME}/mine/softwares/vim/bin/vim" ]
+    then
+    alias v="${HOME}/mine/softwares/vim/bin/vim"
+else
+    alias v=vim
+fi
+
 alias e="emacs -nw"
-alias mysql="mysql -u shawn -p --pager=less --local-infile=1 travel_reservation"
-alias mysqlu="mysql -u root -p --pager=less --local-infile=1"
-# my alias --------------------------------------------------
-
-# For wine =====================================================
-alias foxit='wine /home/shawn/.wine/drive_c/Program\ Files\ \(x86\)/Foxit\ Software/Foxit\ Reader/Foxit\ Reader.exe'
-
-# Temporary path setup for project developing.
-export PATH="${HOME}/work/project/sp_cnn/preprocessing/:$PATH"
-export PYLEARN2_DATA_PATH=/data-002/data/pylearn2/
-export PYTHONPATH="${HOME}/work/project/sp_cnn:${PYTHONPATH}"
-
-# For Torch
-. /home/shawn/work/third_party/torch/install/bin/torch-activate
-# For Expresso
-export CAFFE_ROOT=$HOME/work/third_party/caffe/
-export EXPRESSO_ROOT=$HOME/work/third_party/expresso/
