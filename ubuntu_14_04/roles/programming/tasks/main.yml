@@ -5,3 +5,8 @@
 
 - name: "Install pytest."
   command: pip install pytest
+
+- name: "Install gflags."
+  command: pip install {{ item }}
+  with_items:
+    - python-gflags
