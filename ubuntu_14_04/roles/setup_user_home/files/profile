@@ -13,8 +13,8 @@ export GIT_EDITOR=vim
 # #########################################################################
 if [ -v DISPLAY ]
 then
-    echo "Running in graphical env. Swap Ctrl and Caps Lock keys"
-    setxkbmap -option ctrl:nocaps 
+    setxkbmap -option ctrl:nocaps
+    echo "Running in graphical env. Swapped Ctrl and Caps Lock keys".
 fi
 
 ## Color config for ls
