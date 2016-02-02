@@ -6,8 +6,3 @@
         password=5fMSR/aa05Grw
         groups=sudo
         shell=/bin/bash
-
-- name: "Install public key of the control machine."
-  authorized_key: user={{ new_user }}
-                  key="{{ lookup('file', '{{ HOME }}/.ssh/id_rsa.pub') }}"
-                  manage_dir=yes
