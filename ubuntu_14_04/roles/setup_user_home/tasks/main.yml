@@ -1,33 +1,38 @@
 ---
-- name: "Install .bashrc"
-  copy: src="bashrc" dest="~/.bashrc"
+- name: "Install public key of the control machine."
+  authorized_key: user={{ new_user }}
+                  key="{{ lookup('file', '{{ HOME }}/.ssh/id_rsa.pub') }}"
+                  manage_dir=yes
 
-- name: "Install .profile"
-  copy: src="profile" dest="~/.profile"
+# - name: "Install .bashrc"
+  # copy: src="bashrc" dest="~/.bashrc"
 
-- name: "Install .gnomerc"
-  copy: src="gnomerc" dest="~/.gnomerc"
+# - name: "Install .profile"
+  # copy: src="profile" dest="~/.profile"
 
-- name: "Install .tmux.conf"
-  copy: src=".tmux.conf" dest="~/.tmux.conf"
+# - name: "Install .gnomerc"
+  # copy: src="gnomerc" dest="~/.gnomerc"
 
-- name: "Git clone vim config"
-  git: repo=https://github.com/shawnLeeZX/.vim dest=~/.vim accept_hostkey=true
+# - name: "Install .tmux.conf"
+  # copy: src=".tmux.conf" dest="~/.tmux.conf"
 
-- name: "Install gitconfig"
-  copy: src="gitconfig" dest="~/.gitconfig"
+# - name: "Git clone vim config"
+  # git: repo=https://github.com/shawnLeeZX/.vim dest=~/.vim accept_hostkey=true
 
-- name: "Install gitignore"
-  copy: src="gitignore" dest="~/.gitignore"
+# - name: "Install gitconfig"
+  # copy: src="gitconfig" dest="~/.gitconfig"
 
-- name: "Install useful scripts"
-  copy: src="bin" dest="~/mine/"
+# - name: "Install gitignore"
+  # copy: src="gitignore" dest="~/.gitignore"
 
-- name: "Make scripts executable"
-  shell: chmod 744 ~/mine/bin/*
+# - name: "Install useful scripts"
+  # copy: src="bin" dest="~/mine/"
 
-- name: "Git clone emacs config"
-  git: repo=https://github.com/shawnLeeZX/emacs.d dest=~/.emacs.d accept_hostkey=true
+# - name: "Make scripts executable"
+  # shell: chmod 744 ~/mine/bin/*
 
-- name: "Install pretty print for stl for gdb. Remember to modify libstdcxx path."
-  copy: src="gdbinit" dest="~/.gdbinit"
+# - name: "Git clone emacs config"
+  # git: repo=https://github.com/shawnLeeZX/emacs.d dest=~/.emacs.d accept_hostkey=true
+
+# - name: "Install pretty print for stl for gdb. Remember to modify libstdcxx path."
+  # copy: src="gdbinit" dest="~/.gdbinit"
