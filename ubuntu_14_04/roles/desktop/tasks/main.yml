@@ -11,6 +11,9 @@
 - name: "Add ppa for Variety desktop changer."
   apt_repository: repo='ppa:peterlevi/ppa'
 
+- name: "Add ppa for deepin music player."
+  apt_repository: repo='ppa:noobslab/deepin-sc'
+
 - name: "Update apt cache"
   apt: update_cache=yes
   tags:
@@ -132,3 +135,6 @@
     - ubuntu-restricted-extras
     - libavcodec-extra
     - libdvdread4
+
+- name: "Install deepin-music-player"
+  apt: pkg=deepin-music-player state=present
