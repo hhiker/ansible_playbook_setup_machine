@@ -10,3 +10,8 @@
   command: pip install {{ item }}
   with_items:
     - python-gflags
+
+- name: "Install bibtexparser."
+  command: pip install {{ item }}
+  with_items:
+    - bibtexparser
