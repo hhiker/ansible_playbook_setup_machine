@@ -3,8 +3,20 @@
 - name: "Install pip3"
   apt: pkg="python3-pip" state="present"
 
-- name: "Install programming libraries for python."
+- name: "Install log, test, flag libraries for python."
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
-    - [ 'pip', 'pip3' ]
-    - [ 'glog', 'pytest', 'python-gflags', 'bibtexparser' ]
+    - [ "pip", "pip3" ]
+    - [ "glog", "pytest", "python-gflags" ]
+
+- name: "Install ipython for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "ipython", "matplotlib", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
+
+- name: "Install misc libraries for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "bibtexparser" ]
