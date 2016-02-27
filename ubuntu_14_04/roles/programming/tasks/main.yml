@@ -1,17 +1,10 @@
 ---
 # Programming libraries for python.
-- name: "Install glog."
-  command: pip install glog
+- name: "Install pip3"
+  apt: pkg="python3-pip" state="present"
 
-- name: "Install pytest."
-  command: pip install pytest
-
-- name: "Install gflags."
-  command: pip install {{ item }}
-  with_items:
-    - python-gflags
-
-- name: "Install bibtexparser."
-  command: pip install {{ item }}
-  with_items:
-    - bibtexparser
+- name: "Install programming libraries for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ 'pip', 'pip3' ]
+    - [ 'glog', 'pytest', 'python-gflags', 'bibtexparser' ]
