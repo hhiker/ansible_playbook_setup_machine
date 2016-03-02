@@ -13,7 +13,7 @@
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "ipython", "matplotlib", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
+    - [ "ipython", "jupyter", "matplotlib", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
 
 - name: "Install misc libraries for python."
   command: "{{ item[0] }} install {{ item[1] }}"
