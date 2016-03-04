@@ -7,7 +7,7 @@
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "glog", "pytest", "python-gflags" ]
+    - [ "glog", "pytest", "python-gflags", "tqdm" ]
 
 - name: "Install ipython for python."
   command: "{{ item[0] }} install {{ item[1] }}"
