@@ -19,4 +19,4 @@
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "bibtexparser" ]
+    - [ "bibtexparser", "fake-useragent" ]
