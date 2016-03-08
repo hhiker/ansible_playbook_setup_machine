@@ -25,4 +25,4 @@
     gather_facts: no
 
     roles:
-      - user_init
+      - setup_user_home
