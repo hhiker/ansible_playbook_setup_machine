@@ -78,18 +78,8 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
 #     -i "${PLAYBOOK_HOME}/hosts" -K \
 #     --extra-vars "hosts=local_machine user=$USER_NAME"
 
-# # Install sklearn.
-# ansible-playbook "${PLAYBOOK_HOME}/scikit.yml" \
-#     -i "${PLAYBOOK_HOME}/hosts" -K \
-#     --extra-vars "hosts=local_machine user=$USER_NAME"
-
 # # Install R.
 # ansible-playbook "${PLAYBOOK_HOME}/R.yml" \
-#     -i "${PLAYBOOK_HOME}/hosts" -K \
-#     --extra-vars "hosts=local_machine user=$USER_NAME"
-
-# # Install ipython
-# ansible-playbook "${PLAYBOOK_HOME}/ipython.yml" \
 #     -i "${PLAYBOOK_HOME}/hosts" -K \
 #     --extra-vars "hosts=local_machine user=$USER_NAME"
 
@@ -118,6 +108,14 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
     # -i "${PLAYBOOK_HOME}/hosts" -K \
     # --extra-vars "hosts=local_machine user=$USER_NAME"
 
-ansible-playbook "${PLAYBOOK_HOME}/programming.yml" \
-    -i "${PLAYBOOK_HOME}/hosts" -K \
-    --extra-vars "hosts=local_machine user=$USER_NAME"
+# ansible-playbook "${PLAYBOOK_HOME}/setup_user_home.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -k \
+    # --extra-vars "hosts=ee_machines user=$USER_NAME new_user=$USER_NAME"
+
+ansible-playbook "${PLAYBOOK_HOME}/local_packages.yml" \
+    -i "${PLAYBOOK_HOME}/hosts" \
+    --extra-vars "hosts=ee_machines user=$USER_NAME"
+
+# ansible-playbook "${PLAYBOOK_HOME}/programming.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=local_machine user=$USER_NAME"
