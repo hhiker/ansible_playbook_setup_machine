@@ -1,3 +1,6 @@
 * TODO
-** TODO Write a better .bashrc and .profile template.
+** DONE Write a better .bashrc and .profile template.
+   CLOSED: [2016-03-08 Tue 15:56]
+   - State "DONE"       from "TODO"       [2016-03-08 Tue 15:56]
+** TODO Audio and video related packages are broken. Fix it.
 ** TODO Update playbooks to remove the deprecated in Ansible 2.0
