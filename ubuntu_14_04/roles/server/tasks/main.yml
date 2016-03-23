@@ -86,6 +86,9 @@
 - name: "Install automake"
   apt: pkg="automake" state="present"
 
+- name: "Install traceroute"
+  apt: pkg="traceroute" state="present"
+
 # It would ask for a license agreement, which has to be interactive.
 # - name: "Install official Java."
 #   apt: pkg=oracle-java8-installer state=present

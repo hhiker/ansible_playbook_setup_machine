@@ -7,7 +7,7 @@
     - python-dev
     - libatlas-dev
     - libatlas3gf-base
-    - libpng-devel
+    - libpng12-dev
     - libfreetype6-dev
 
 - name: "make sure that ATLAS is used to provide the implementation of the BLAS linear algebra routines:"
