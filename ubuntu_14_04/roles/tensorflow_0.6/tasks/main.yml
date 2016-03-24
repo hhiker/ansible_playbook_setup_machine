@@ -1,0 +1,16 @@
+---
+- name: "Install prerequisite of tensorflow."
+  command: pip install {{ item }}
+  with_items:
+    - virtualenv
+
+- name: "Install cuda 7.0, note the machine should have some version of cuda
+  installed, otherwise, the source cannot be found"
+  apt: pkg=cuda-7-0 state=present
+
+- name: "Install tensorflow using user scheme."
+  sudo: no
+  command: pip install --user https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl
+
+- name: "Install pycuda."
+  script: pycuda.sh
