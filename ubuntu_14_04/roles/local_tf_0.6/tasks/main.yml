@@ -1,7 +1,5 @@
 ---
 - name: "Install tensorflow locally."
-  # Note that this is for tensorflow 0.7.1. If a older version is needed, it
-  # needs to be installed manually.
   script: tensorflow.sh
 
 - name: "Install pycuda."

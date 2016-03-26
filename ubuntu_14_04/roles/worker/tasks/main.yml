@@ -1,34 +1,5 @@
 ---
-# This playbook installs necessary software for using Ubuntu as a server.
-
-- name: "Added ppa to install official Java. Note the acutual Java is not
-         installed since it needs interactly say yes to some licence
-         agreement. Install it by yourself if you need."
-  apt_repository: repo='ppa:webupd8team/java'
-
-- name: "Added ppa to install various unrelease/git builds applications."
-  apt_repository: repo='ppa:webupd8team/unstable'
-
-- name: "Update apt cache"
-  apt: update_cache=yes
-  tags:
-    - update
-
-- name: "Install aptitude"
-  apt: pkg=aptitude state=present
-  tags:
-    - update
-
-- name: "Upgrade system"
-  apt: upgrade=yes
-  tags:
-    - update
-
 # Install necessary softwares.
-
-# TODO(Shuai) there is an almost exact copy at role worker. Consider find some
-# way to include worker tasks here.
-
 - name: "Install git"
   apt: pkg=git state=present
 
@@ -93,6 +64,5 @@
 - name: "Install traceroute"
   apt: pkg="traceroute" state="present"
 
-# It would ask for a license agreement, which has to be interactive.
-# - name: "Install official Java."
-#   apt: pkg=oracle-java8-installer state=present
+- name: "Install unison"
+  apt: pkg="unison" state="present"
