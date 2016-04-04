@@ -1,0 +1,12 @@
+---
+# file: server.yml
+
+  # This playbook will install the necessary programs to use a remote server to
+  # work.
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - worker

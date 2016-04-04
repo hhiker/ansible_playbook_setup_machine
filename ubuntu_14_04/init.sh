@@ -1,5 +1,4 @@
 #!/bin/bash
-
 usage()
 {
     printf "%b" "
@@ -9,21 +8,25 @@ Set up Ansible on Control Machine.
 
 The OS should be Ubuntu 14.04.
 
-bash init.sh USER_NAME
+bash init.sh USER_NAMEgHOSTS
 
 Args:
     USER_NAME: You user name on the control machine you would like to use
+    HOSTS: hosts to run on
         Ansible with.
+
+Boilerplates are commented out in the script. Uncomment them to use.
 "
 }
 
-if [ $# -ne 1 ]
+if [ $# -ne 2 ]
 then
     usage
     exit 0
 fi
 
 USER_NAME=$1
+HOSTS=$2
 
 # # Clean up home folder.
 # cd
@@ -109,12 +112,25 @@ source ${SOFTWARE_FOLDER}/ansible/hacking/env-setup
     # --extra-vars "hosts=local_machine user=$USER_NAME"
 
 # ansible-playbook "${PLAYBOOK_HOME}/setup_user_home.yml" \
-    # -i "${PLAYBOOK_HOME}/hosts" -k \
-    # --extra-vars "hosts=ee_machines user=$USER_NAME new_user=$USER_NAME"
+#     -i "${PLAYBOOK_HOME}/hosts" -k \
+#     --extra-vars "hosts=$HOSTS user=$USER_NAME new_user=$USER_NAME"
 
-ansible-playbook "${PLAYBOOK_HOME}/local_packages.yml" \
-    -i "${PLAYBOOK_HOME}/hosts" \
-    --extra-vars "hosts=ee_machines user=$USER_NAME"
+# ansible-playbook "${PLAYBOOK_HOME}/worker.yml" \
+#     -i "${PLAYBOOK_HOME}/hosts" -K \
+#     --extra-vars "hosts=$HOSTS user=$USER_NAME"
+
+# ansible-playbook "${PLAYBOOK_HOME}/tensorflow_0.6.yml" \
+    # -i "${PLAYBOOK_HOME}/hosts" -K \
+    # --extra-vars "hosts=ie_machine user=$USER_NAME"
+
+# ansible-playbook "${PLAYBOOK_HOME}/local_packages.yml" \
+#     -i "${PLAYBOOK_HOME}/hosts" \
+#     --extra-vars "hosts=$HOSTS user=$USER_NAME"
+
+# ansible-playbook "${PLAYBOOK_HOME}/local_tf_0.6.yml" \
+#     -i "${PLAYBOOK_HOME}/hosts" \
+#     --extra-vars "hosts=$HOSTS user=$USER_NAME"
+
 
 # ansible-playbook "${PLAYBOOK_HOME}/programming.yml" \
     # -i "${PLAYBOOK_HOME}/hosts" -K \

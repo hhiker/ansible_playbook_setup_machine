@@ -1,0 +1,6 @@
+---
+- name: "Install tensorflow locally."
+  script: tensorflow.sh
+
+- name: "Install pycuda."
+  script: pycuda.sh

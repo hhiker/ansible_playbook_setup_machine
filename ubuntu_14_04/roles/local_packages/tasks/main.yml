@@ -1,6 +1,6 @@
 ---
-# - name: "Install tmux locally."
-#   script: tmux.sh
+- name: "Install tmux locally."
+  script: tmux.sh
 
 - name: "Install miniconda locally."
   script: miniconda.sh
@@ -12,3 +12,9 @@
 
 - name: "Install common libraries for python."
   script: py_pkgs.sh
+
+- name: "Install common libraries for python."
+  script: pycuda.sh
+
+- name: "Install unison."
+  script: unison.sh

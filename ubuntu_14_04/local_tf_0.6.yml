@@ -1,0 +1,9 @@
+---
+  # Set up local packages to deal with the case root previlige is not
+  # available.
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+
+    roles:
+      - local_tf_0.6
