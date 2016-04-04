@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 28
+#     Update #: 29
 #
 #
 # Commentary:
@@ -53,6 +53,11 @@ tlmgr install ifplatform xstring lineno paralist cleveref
 # For math typeset.
 # #########################################################################
 tlmgr install commath
+
+# NIPS template dependency
+# #######################################################################
+tlmgr install microtype units
+
 
 #
 # install_packages.sh ends here
