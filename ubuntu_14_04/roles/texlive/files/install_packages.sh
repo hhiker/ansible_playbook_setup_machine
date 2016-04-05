@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 29
+#     Update #: 30
 #
 #
 # Commentary:
@@ -58,6 +58,9 @@ tlmgr install commath
 # #######################################################################
 tlmgr install microtype units
 
+# For writing drafts
+# #######################################################################
+tlmgr install todonotes
 
 #
 # install_packages.sh ends here
