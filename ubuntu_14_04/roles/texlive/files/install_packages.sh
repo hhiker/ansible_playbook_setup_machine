@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 30
+#     Update #: 31
 #
 #
 # Commentary:
@@ -49,6 +49,8 @@ tlmgr install import
 # some bugs to install it again. Maybe the new version is installed.
 tlmgr install fontspec xltxtra
 tlmgr install ifplatform xstring lineno paralist cleveref
+# Footnote in a table
+tlmgr install tablefootnote ifmtarg xifthen
 
 # For math typeset.
 # #########################################################################
