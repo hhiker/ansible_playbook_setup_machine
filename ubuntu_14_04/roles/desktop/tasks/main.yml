@@ -138,3 +138,6 @@
 
 - name: "Install deepin-music-player"
   apt: pkg=deepin-music-player state=present
+
+- name: "Install command line mp3 players mpg123"
+  apt: pkg=mpg123 state=present
