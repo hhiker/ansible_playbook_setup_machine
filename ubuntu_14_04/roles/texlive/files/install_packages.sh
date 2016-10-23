@@ -8,7 +8,7 @@
 # Package-Requires: ()
 # Last-Updated:
 #           By:
-#     Update #: 31
+#     Update #: 32
 #
 #
 # Commentary:
@@ -63,6 +63,11 @@ tlmgr install microtype units
 # For writing drafts
 # #######################################################################
 tlmgr install todonotes
+
+# For coding
+# #######################################################################
+tlmgr install minted
+
 
 #
 # install_packages.sh ends here
