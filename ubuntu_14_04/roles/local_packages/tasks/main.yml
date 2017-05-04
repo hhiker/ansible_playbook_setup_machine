@@ -5,8 +5,10 @@
 - name: "Install miniconda locally."
   script: miniconda.sh
 
-- name: "Install tensorflow locally."
-  script: tensorflow.sh
+# Tensorflow now is officially in pip index, so do not need to treat it
+# separately. Save the above in case I want to install some old versions.
+# - name: "Install tensorflow locally."
+#   script: tensorflow.sh
 
 - name: "Install common libraries for python."
   script: py_pkgs.sh
