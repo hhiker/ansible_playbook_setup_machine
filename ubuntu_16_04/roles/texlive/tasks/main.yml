@@ -1,0 +1,21 @@
+---
+- name: "Add texlive 2017."
+  apt_repository: repo='ppa:jonathonf/texlive-2017'
+
+- name: "Update apt cache"
+  apt: update_cache=yes
+  tags:
+      - update
+
+- name: "Install texlive."
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - texlive
+    - texlive-xetex
+    - perl-tk # For GUI of tlgmr
+    - xzdec # xz-format compression utility, usd by tlgmr
+    - biber # For better bibliography management.
+
+- name: "Post installation intialization."
+  sudo: no
+  script: install_packages.sh

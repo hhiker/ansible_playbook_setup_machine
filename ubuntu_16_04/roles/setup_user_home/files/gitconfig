@@ -1,0 +1,11 @@
+[user]
+	name = Shuai Li
+	email = lishuai918@gmail.com
+[color]
+	ui = true
+	diff = auto
+[core]
+	excludesfile = /home/hhiker/.gitignore
+[alias]
+	st = status
+	cm = commit

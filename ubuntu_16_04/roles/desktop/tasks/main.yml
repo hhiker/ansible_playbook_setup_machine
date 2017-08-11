@@ -1,0 +1,131 @@
+---
+# This playbook installs necessary software for using Ubuntu as desktop.
+
+# Setup necessary ppas.
+- name: "Add ppa for Calendar indicator."
+  apt_repository: repo='ppa:atareao/atareao'
+
+- name: "Add ppa for Variety desktop changer."
+  apt_repository: repo='ppa:peterlevi/ppa'
+
+- name: "Update apt cache"
+  apt: update_cache=yes
+  tags:
+      - update
+
+# Install gnome desktop.
+- name: "Install gnome-shell"
+  apt: pkg=gnome-shell state=present
+
+- name: "Install gnome-shell-extensions"
+  apt: pkg=gnome-shell-extensions state=present
+
+- name: "Install gnome-tweak-tool"
+  apt: pkg=gnome-tweak-tool state=present
+
+# Uninstall unnecessary desktop softwares.
+- name: "Uninstall ibus"
+  apt: pkg=ibus state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk state=absent
+
+- name: "Uninstall ibus"
+  apt: pkg=ibus-gtk3 state=absent
+
+- name: "Uninstall firefox"
+  apt: pkg=firefox state=absent
+
+# # Install necessary desktop softwares.
+- name: "Install fcitx"
+  apt: pkg=fcitx state=present
+
+- name: "Install fcitx"
+  apt: pkg=fcitx-sunpinyin state=present
+
+# - name: "Install sogoupinyin"
+#   apt: pkg=sogoupinyin state=present
+
+- name: "Install guake"
+  apt: pkg=guake state=present
+
+- name: "Install stardict"
+  apt: pkg=stardict state=present
+
+- name: "Uninstall totem"
+  apt: pkg=totem state=absent
+
+- name: "Install vlc"
+  apt: pkg=vlc state=present
+
+- name: "Install variety"
+  apt: pkg=variety state=present
+
+- name: "Install pandoc"
+  apt: pkg=pandoc state=present
+
+- name: "Install okular"
+  apt: pkg=okular state=present
+
+# - name: "Install google-chrome-stable"
+#   apt: pkg=google-chrome-stable state=present
+
+- name: "Fix chrome encoding problem."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - ttf-wqy-microhei
+    - ttf-wqy-zenhei
+    - xfonts-wqy
+
+- name: "Install xchm"
+  apt: pkg=xchm state=present
+
+- name: "Install tree"
+  apt: pkg=tree state=present
+
+- name: "Install p7zip-full"
+  apt: pkg=p7zip-full state=present
+
+- name: "Install shutter"
+  apt: pkg=shutter state=present
+
+- name: "Install wine"
+  apt: pkg=wine state=present
+
+- name: "Install calibre"
+  apt: pkg=calibre state=present
+
+- name: "Install terminator"
+  apt: pkg=terminator state=present
+
+- name: "Install mp4 to mp3 converter."
+  apt: pkg={{ item }} state=present
+  with_items:
+    - pacpl
+
+- name: "Install virtualbox."
+  apt: pkg=virtualbox state=present
+
+- name: "Install markdown"
+  apt: pkg=markdown state=present
+
+- name: "Install gparted"
+  apt: pkg=gparted state=present
+
+- name: "Install some applets"
+  apt: pkg={{ item }} state=present
+  with_items:
+    - gdesklets
+    - alarm-clock-applet
+    - calendar-indicator
+
+- name: "Install dependences to play audio and video."
+  apt: pkg={{ item }} state=present
+  with_items:
+    # - gstreamer0.10-ffmpeg  # Disble due to it is for 14.04
+    - ubuntu-restricted-extras
+    - libavcodec-extra
+    - libdvdread4
+
+- name: "Install command line mp3 players mpg123"
+  apt: pkg=mpg123 state=present

@@ -1,0 +1,101 @@
+---
+# This playbook installs necessary software for using Ubuntu as a server.
+
+- name: "Added ppa to install official Java. Note the acutual Java is not
+         installed since it needs interactly say yes to some licence
+         agreement. Install it by yourself if you need."
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: "Added ppa to install various unrelease/git builds applications."
+  apt_repository: repo='ppa:webupd8team/unstable'
+
+- name: "Update apt cache"
+  apt: update_cache=yes
+  tags:
+    - update
+
+- name: "Install aptitude"
+  apt: pkg=aptitude state=present
+  tags:
+    - update
+
+- name: "Upgrade system"
+  apt: upgrade=yes
+  tags:
+    - update
+
+# Install necessary softwares.
+
+# TODO(Shuai) there is an almost exact copy at role worker. Consider find some
+# way to include worker tasks here.
+
+- name: "Install git"
+  apt: pkg=git state=present
+
+- name: "Install cscope"
+  apt: pkg="cscope" state=present
+
+- name: "Install ctags"
+  apt: pkg="ctags" state=present
+
+- name: "Install tmux"
+  apt: pkg=tmux state=present
+
+- name: "Install w3m"
+  apt: pkg=w3m state=present
+
+- name: "Install tree"
+  apt: pkg=tree state=present
+
+# For using minted for latex.
+- name: "Install pygmentize"
+  apt: pkg="python-pygments" state=present
+
+- name: "Install bvi."
+  apt: pkg=bvi state=present
+
+- name: "Install octave."
+  apt: pkg=octave state=present
+
+- name: "Install nmon."
+  apt: pkg=nmon state=present
+
+- name: "Install unrar."
+  apt: pkg=unrar state=present
+
+- name: "Install dos2unix."
+  apt: pkg=dos2unix state=present
+
+- name: "Install curl."
+  apt: pkg=curl state=present
+
+- name: "Install perl document package."
+  apt: pkg=perl-doc state=present
+
+- name: "Install pip for installing python packages."
+  apt: pkg=python-pip state=present
+
+- name: "Install apt-file."
+  apt: pkg=apt-file state=present
+
+- name: "Install whois for mkpass to generate encrypted password."
+  apt: pkg=whois state=present
+
+- name: "Install gfortran"
+  apt: pkg="gfortran" state="present"
+
+- name: "Install autoconf"
+  apt: pkg="autoconf" state="present"
+
+- name: "Install automake"
+  apt: pkg="automake" state="present"
+
+- name: "Install traceroute"
+  apt: pkg="traceroute" state="present"
+
+- name: "Install pdfgrep"
+  apt: pkg="pdfgrep" state="present"
+
+# It would ask for a license agreement, which has to be interactive.
+# - name: "Install official Java."
+#   apt: pkg=oracle-java8-installer state=present

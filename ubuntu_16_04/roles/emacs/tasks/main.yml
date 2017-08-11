@@ -1,0 +1,35 @@
+---
+- name: "Install emacs"
+  apt: pkg="emacs" state="present"
+
+- name: "Install xsel."
+  apt: pkg="xsel" state="present"
+
+- name: "Install global for code navigation."
+  apt: pkg="global" state="present"
+
+- name: "Install clang and cmake for code completion."
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - libclang-dev
+    - clang
+    - cmake
+
+- name: "Install dependences via pip."
+  command: pip install {{ item }}
+  with_items:
+    - cpplint # Code lint(cpp).
+    - pyflakes # Code lint(python
+    # Pylint always make confusing error report about extern library. So I
+    # switch to flake8.
+    # - pylint # Code lint(python).
+    - virtualenv # Jedi(python)
+    - jedi # Awesome autocompletion and static analysis library for python.
+    - rope # Provide python refactoring function.
+    - importmagic # The goal of this package is to be able to automatically manage imports in Python.
+
+  # This does not work. All ruby related stuff does not work with
+  # ansible for the time being.
+# - name: "Install robe dependences."
+#   sudo: no
+#   command: gem install pry

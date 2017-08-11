@@ -1,0 +1,46 @@
+# Setting for default editor.
+# #########################################################################
+# # Where should Vim be found.
+# export VIM="/usr/local/bin/"
+# export VIMRUNTIME="/usr/local/share/vim/vim74/"
+# # Two variables concerning default editor of linux.
+# export EDITOR=$VIM/vim
+# export VISUAL=$VIM/vim
+# The default editor defined for git.
+export GIT_EDITOR=vim
+
+# Make Caps Lock a Ctrl Key.
+# #########################################################################
+if [ -v DISPLAY ]
+then
+    setxkbmap -option ctrl:nocaps
+    echo "Running in graphical env. Swapped Ctrl and Caps Lock keys".
+fi
+
+## Color config for ls
+# #########################################################################
+export LS_COLORS=$LS_COLORS:'di=0;35'
+
+# PATH
+# #########################################################################
+export PATH="$PATH:~/mine/bin/"
+
+# CUDA
+# #########################################################################
+export PATH="/usr/local/cuda/bin/:$PATH"
+export CPATH="/usr/local/cudnn/include/:$CPATH"
+# export LIBRARY="/usr/local/cudnn/:$LIBRARY"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/intel/mkl/lib/intel64/"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cuda/lib64/"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cudnn/lib/"
+export CUDA_HOME="/usr/local/cuda/"
+
+# Ending
+# #######################################################################
+# if running bash, source non-login conf.
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi

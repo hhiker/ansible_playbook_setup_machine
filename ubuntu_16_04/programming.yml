@@ -1,0 +1,10 @@
+---
+# This ansible playbook will setup commonly used libraries for programming.
+
+  - hosts: "{{ hosts }}"
+    user: "{{ user }}"
+    gather_facts: no
+    sudo: yes
+
+    roles:
+      - programming

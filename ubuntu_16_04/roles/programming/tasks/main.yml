@@ -1,0 +1,51 @@
+---
+# Some common dependency.
+- name: "Install some dependency"
+  apt: pkg={{ item }} state=present
+  with_items:
+    - build-essential
+    - python-dev
+    - libatlas-dev
+    - libatlas3-base
+    - libpng12-dev
+    - libfreetype6-dev
+
+- name: "make sure that ATLAS is used to provide the implementation of the BLAS linear algebra routines:"
+  command: update-alternatives --set libblas.so.3 /usr/lib/atlas-base/atlas/libblas.so.3
+
+- name: "make sure that ATLAS is used to provide the implementation of the LAPACK linear algebra routines:"
+  command: update-alternatives --set liblapack.so.3 /usr/lib/atlas-base/atlas/liblapack.so.3
+
+# Programming libraries for python.
+- name: "Install pip3"
+  apt: pkg="python3-pip" state="present"
+
+- name: "Install essential python utilities."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "setuptools" ]
+
+- name: "Install log, test, flag libraries for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "glog", "pytest", "python-gflags", "tqdm" ]
+
+- name: "Install ipython for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "ipython", "jupyter", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
+
+- name: "Install sklearn"
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "numpy", "matplotlib", "scipy", "scikit-learn", "seaborn" ]
+
+- name: "Install misc libraries for python."
+  command: "{{ item[0] }} install {{ item[1] }}"
+  with_nested:
+    - [ "pip", "pip3" ]
+    - [ "bibtexparser", "fake-useragent" ]

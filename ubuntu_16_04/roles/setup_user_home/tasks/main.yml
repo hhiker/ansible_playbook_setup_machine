@@ -1,0 +1,38 @@
+---
+- name: "Install public key of the control machine."
+  authorized_key: user={{ new_user }}
+                  key="{{ lookup('file', '{{ HOME }}/.ssh/id_rsa.pub') }}"
+                  manage_dir=yes
+
+- name: "Install .bashrc"
+  copy: src="bashrc" dest="~/.bashrc"
+
+- name: "Install .profile"
+  copy: src="profile" dest="~/.profile"
+
+- name: "Install .gnomerc"
+  copy: src="gnomerc" dest="~/.gnomerc"
+
+- name: "Install .tmux.conf"
+  copy: src=".tmux.conf" dest="~/.tmux.conf"
+
+- name: "Git clone vim config"
+  git: repo=https://github.com/shawnLeeZX/.vim dest=~/.vim accept_hostkey=true
+
+- name: "Install gitconfig"
+  copy: src="gitconfig" dest="~/.gitconfig"
+
+- name: "Install gitignore"
+  copy: src="gitignore" dest="~/.gitignore"
+
+- name: "Install useful scripts"
+  copy: src="bin" dest="~/mine/"
+
+- name: "Make scripts executable"
+  shell: chmod 744 ~/mine/bin/*
+
+- name: "Git clone emacs config"
+  git: repo=https://github.com/shawnLeeZX/emacs.d dest=~/.emacs.d accept_hostkey=true
+
+- name: "Install pretty print for stl for gdb. Remember to modify libstdcxx path."
+  copy: src="gdbinit" dest="~/.gdbinit"
