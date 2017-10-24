@@ -30,19 +30,28 @@
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "glog", "pytest", "python-gflags", "tqdm" ]
+    - [ "glog", "pytest", "python-gflags", "tqdm", "ipdb" ]
+
+- name: "install ipython LTS"
+  command: pip install ipython==5.0
+
+- name: "install ipython3"
+  command: pip3 install ipython
 
 - name: "Install ipython for python."
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "ipython", "jupyter", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
+    - [ "jupyter", "pyzmq", "tornado", "pyreadline", "jsonschema", "decorator", "notebook" ]
+
+- name: "install tensorflow"
+  command: pip install tensorflow-gpu
 
 - name: "Install sklearn"
   command: "{{ item[0] }} install {{ item[1] }}"
   with_nested:
     - [ "pip", "pip3" ]
-    - [ "numpy", "matplotlib", "scipy", "scikit-learn", "seaborn" ]
+    - [ "numpy", "matplotlib", "scipy", "scikit-learn", "seaborn"]
 
 - name: "Install misc libraries for python."
   command: "{{ item[0] }} install {{ item[1] }}"
