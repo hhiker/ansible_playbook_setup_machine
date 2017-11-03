@@ -1,0 +1,9 @@
+---
+- name: "Create user {{ new_user }} if non-exist."
+  user: name={{ new_user }}
+        generate_ssh_key=yes
+        system=yes
+        password=5fMSR/aa05Grw
+        groups=sudo
+        createhome=yes
+        shell=/bin/bash

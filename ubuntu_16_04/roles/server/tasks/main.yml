@@ -96,6 +96,15 @@
 - name: "Install pdfgrep"
   apt: pkg="pdfgrep" state="present"
 
+- name: "Install unison"
+  apt: pkg="unison" state="present"
+
+- name: "Install python debugger"
+  apt: pkg={{ item }} state="present"
+  with_items:
+    - python-wxgtk3.0
+    - winpdb
+
 # It would ask for a license agreement, which has to be interactive.
 # - name: "Install official Java."
 #   apt: pkg=oracle-java8-installer state=present

@@ -1,7 +1,7 @@
 ---
 # file: server.yml
 
-  # This playbook will install the necessary programs to run ubuntu 14.04 as a
+  # This playbook will install the necessary programs to run ubuntu 16.04 as a
   # server.
   - hosts: "{{ hosts }}"
     user: "{{ user }}"
